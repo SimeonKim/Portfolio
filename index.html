@@ -1,0 +1,1580 @@
+<!DOCTYPE html>
+<html class="dark" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Simeon Kim · Mechanical Design Portfolio</title>
+<meta name="description" content="FRC Team 2658 Σ-Motion President & Design Lead. CNC Manufacturing. Prosthetics Design. CSWP certified. Yale '30."/>
+<meta name="theme-color" content="#131313"/>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23131313'/%3E%3Ctext x='32' y='43' font-family='Arial,Helvetica,sans-serif' font-size='28' font-weight='900' fill='%23ffafd0' text-anchor='middle'%3ESK%3C/text%3E%3C/svg%3E"/>
+<!-- Social sharing -->
+<meta property="og:type" content="website"/>
+<meta property="og:title" content="Simeon Kim · Mechanical Design Portfolio"/>
+<meta property="og:description" content="FRC Team 2658 Σ-Motion President & Design Lead. CNC Manufacturing. Prosthetics Design. CSWP certified. Yale '30."/>
+<meta property="og:image" content="images/profile.webp"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:title" content="Simeon Kim · Mechanical Design Portfolio"/>
+<meta name="twitter:description" content="FRC robotics, CNC manufacturing, and prosthetics design. Yale '30."/>
+<!-- NOTE: after deploying, replace og:image above with the full absolute URL, e.g. https://YOURUSERNAME.github.io/images/profile.webp - social previews require absolute URLs -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Simeon Kim",
+  "jobTitle": "Mechanical Designer",
+  "email": "mailto:simeon.kim@yale.edu",
+  "address": { "@type": "PostalAddress", "addressLocality": "San Diego", "addressRegion": "CA", "addressCountry": "US" },
+  "alumniOf": { "@type": "CollegeOrUniversity", "name": "Yale University" },
+  "sameAs": ["https://linkedin.com/in/simeon-kim-115855277"],
+  "knowsAbout": ["Mechanical Design", "SolidWorks", "CNC Machining", "FEA", "Robotics", "Prosthetics Design", "Topology Optimization"]
+}
+</script>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@200;400;600;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+tailwind.config = {
+  darkMode: "class",
+  theme: {
+    extend: {
+      colors: {
+        "primary": "#ffafd0",
+        "primary-container": "#ed5aa5",
+        "on-primary": "#63003d",
+        "secondary-container": "#693c45",
+        "on-secondary-container": "#e4a9b3",
+        "surface": "#131313",
+        "surface-container-lowest": "#0e0e0e",
+        "surface-container-low": "#1b1b1b",
+        "surface-container": "#1f1f1f",
+        "surface-container-high": "#2a2a2a",
+        "surface-container-highest": "#353535",
+        "on-surface": "#e2e2e2",
+        "on-surface-variant": "#dcbfc9",
+        "outline": "#a48a93",
+        "outline-variant": "#564149",
+        "background": "#131313",
+      },
+      fontFamily: {
+        "headline": ["Plus Jakarta Sans"],
+        "body": ["Inter"],
+      },
+      keyframes: {
+        fadeUp:    { from: { opacity:"0", transform:"translateY(32px)" }, to: { opacity:"1", transform:"translateY(0)" } },
+        fadeIn:    { from: { opacity:"0" }, to: { opacity:"1" } },
+        slideInR:  { from: { opacity:"0", transform:"translateX(48px)" }, to: { opacity:"1", transform:"translateX(0)" } },
+        slideIn:   { from: { transform:"translateX(100%)" }, to: { transform:"translateX(0)" } },
+        scaleIn:   { from: { opacity:"0", transform:"scale(0.94)" }, to: { opacity:"1", transform:"scale(1)" } },
+        tickerL:   { from: { transform:"translateX(0)" }, to: { transform:"translateX(-50%)" } },
+        float:     { "0%,100%": { transform:"translateY(0px)" }, "50%": { transform:"translateY(-10px)" } },
+        gradShift: { "0%":{ "background-position":"0% 50%" }, "50%":{ "background-position":"100% 50%" }, "100%":{ "background-position":"0% 50%" } },
+        pulseRing: { "0%":{ transform:"scale(0.8)", opacity:"0.8" }, "100%":{ transform:"scale(1.6)", opacity:"0" } },
+        shimmer:   { "0%,100%":{ opacity:"0.4" }, "50%":{ opacity:"1" } },
+      },
+      animation: {
+        "fade-up":    "fadeUp 0.7s cubic-bezier(0.22,1,0.36,1) forwards",
+        "slide-in":   "slideIn 0.42s cubic-bezier(0.22,1,0.36,1) forwards",
+        "slide-r":    "slideInR 0.8s cubic-bezier(0.22,1,0.36,1) forwards",
+        "scale-in":   "scaleIn 0.35s cubic-bezier(0.22,1,0.36,1) forwards",
+        "ticker":     "tickerL 30s linear infinite",
+        "float":      "float 5s ease-in-out infinite",
+        "float-alt":  "float 6s ease-in-out 1.5s infinite",
+        "grad-shift": "gradShift 5s ease infinite",
+        "pulse-ring": "pulseRing 2s cubic-bezier(0,0,0.2,1) infinite",
+        "shimmer":    "shimmer 2.4s ease-in-out infinite",
+      },
+    }
+  }
+}
+</script>
+<style>
+  .material-symbols-outlined { font-variation-settings:'FILL' 0,'wght' 300,'GRAD' 0,'opsz' 24; }
+  body { background:#131313; color:#e2e2e2; font-family:'Inter',sans-serif; }
+  ::selection { background:#ffafd0; color:#63003d; }
+  ::-webkit-scrollbar { width:4px; }
+  ::-webkit-scrollbar-track { background:#131313; }
+  ::-webkit-scrollbar-thumb { background:#353535; border-radius:10px; }
+  ::-webkit-scrollbar-thumb:hover { background:#ffafd0; }
+
+  /* scroll progress */
+  #scroll-bar { position:fixed; top:0; left:0; height:2px; width:0%; background:linear-gradient(90deg,#ed5aa5,#ffafd0); z-index:999; transition:width .08s linear; }
+
+  /* cursor glow */
+  #cursor-glow { position:fixed; pointer-events:none; z-index:9998; width:320px; height:320px; border-radius:50%; background:radial-gradient(circle,rgba(237,90,165,.07) 0%,transparent 70%); transform:translate(-50%,-50%); opacity:0; transition:opacity .4s; }
+
+  /* reveal */
+  .reveal        { opacity:0; transform:translateY(28px); transition:opacity .65s cubic-bezier(.22,1,.36,1), transform .65s cubic-bezier(.22,1,.36,1); }
+  .reveal-r      { opacity:0; transform:translateX(40px); transition:opacity .7s cubic-bezier(.22,1,.36,1), transform .7s cubic-bezier(.22,1,.36,1); }
+  .reveal-scale  { opacity:0; transform:scale(.94);       transition:opacity .65s cubic-bezier(.22,1,.36,1), transform .65s cubic-bezier(.22,1,.36,1); }
+  .reveal.visible, .reveal-r.visible, .reveal-scale.visible { opacity:1; transform:none; }
+  .d1 { transition-delay:.1s; } .d2 { transition-delay:.2s; }
+  .d3 { transition-delay:.3s; } .d4 { transition-delay:.42s; }
+  .d5 { transition-delay:.55s; }
+
+  /* glow */
+  .glow-hover:hover { box-shadow:0 0 32px rgba(255,175,208,.14); }
+  .text-glow:hover  { text-shadow:0 0 18px rgba(255,175,208,.5); }
+
+  /* gradient border on hover */
+  .gb { position:relative; }
+  .gb::before { content:''; position:absolute; inset:0; border-radius:inherit; padding:1px;
+    background:linear-gradient(135deg,rgba(237,90,165,0),rgba(237,90,165,0));
+    -webkit-mask:linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    mask:linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite:xor; mask-composite:exclude; transition:background .4s; pointer-events:none; z-index:1; }
+  .gb:hover::before { background:linear-gradient(135deg,rgba(237,90,165,.55),rgba(255,175,208,.25)); }
+
+  /* project card img */
+  .proj-img { transition:transform .6s cubic-bezier(.22,1,.36,1), filter .4s; }
+  .group:hover .proj-img { transform:scale(1.06); filter:brightness(.82) saturate(1.2); }
+
+  /* archive card lift */
+  .arc-card { transition:transform .3s ease, box-shadow .3s ease; }
+  .arc-card:hover { transform:translateY(-5px); box-shadow:0 16px 48px rgba(0,0,0,.45); }
+
+  /* tilt */
+  .tilt { transform-style:preserve-3d; transition:transform .3s ease; }
+
+  /* chip */
+  .chip-active { background:#693c45 !important; color:#e4a9b3 !important; }
+
+  /* panels */
+  #detail-overlay  { transition:opacity .3s ease; }
+  #detail-panel    { transition:transform .42s cubic-bezier(.22,1,.36,1); }
+
+  /* no-photo */
+  .no-photo { background:repeating-linear-gradient(-45deg,#1b1b1b 0,#1b1b1b 12px,#1f1f1f 12px,#1f1f1f 24px); }
+
+  /* ticker mask */
+  .ticker-wrap { -webkit-mask-image:linear-gradient(90deg,transparent,#131313 6%,#131313 94%,transparent); mask-image:linear-gradient(90deg,transparent,#131313 6%,#131313 94%,transparent); }
+
+  /* grad text */
+  .grad-text { background:linear-gradient(90deg,#ffafd0,#ed5aa5,#ffafd0); background-size:200% auto; -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; animation:gradShift 5s ease infinite; }
+
+  /* photo frame glow border */
+  .photo-ring { position:absolute; inset:-3px; border-radius:28px; background:linear-gradient(135deg,rgba(237,90,165,.45),transparent 60%); pointer-events:none; z-index:1; }
+
+  /* skill bars */
+  .sbar { height:2px; background:#564149; border-radius:2px; overflow:hidden; }
+  .sbar-fill { height:100%; width:0; background:linear-gradient(90deg,#ed5aa5,#ffafd0); border-radius:2px; transition:width 1.3s cubic-bezier(.22,1,.36,1); }
+
+  /* tag pill */
+  .tag { background:rgba(105,60,69,.35); color:#e4a9b3; padding:3px 11px; border-radius:999px; font-size:9px; font-weight:700; letter-spacing:.1em; text-transform:uppercase; border:1px solid rgba(237,90,165,.15); white-space:nowrap; }
+
+  /* prosthetics archive card image */
+  .pc-img-wrap { aspect-ratio:16/9; overflow:hidden; }
+  .pc-img      { width:100%; height:100%; object-fit:cover; filter:brightness(.7); transition:transform .6s cubic-bezier(.22,1,.36,1), filter .4s; }
+  .group:hover .pc-img { transform:scale(1.06); filter:brightness(.82) saturate(1.2); }
+
+  /* exp row left accent */
+  .exp-row { position:relative; }
+  .exp-row::before { content:''; position:absolute; left:-4px; top:0; bottom:0; width:2px; border-radius:2px; background:transparent; transition:background .3s; }
+  .exp-row:hover::before { background:#ed5aa5; }
+
+  /* ambient blob */
+  .blob { position:absolute; border-radius:50%; pointer-events:none; background:radial-gradient(circle,rgba(237,90,165,.11) 0%,transparent 70%); }
+
+  /* Custom hover cursor on project images: small, minimal pill */
+  #cursor-view { position:fixed; left:0; top:0; pointer-events:none; z-index:9999;
+    will-change:transform; font-family:'Plus Jakarta Sans',sans-serif; }
+  #cursor-view .cv-inner {
+    position:absolute;
+    transform:translate(14px,16px) scale(.96);
+    opacity:0; transition:opacity .2s ease, transform .25s ease;
+    will-change:transform,opacity; }
+  #cursor-view.show .cv-inner { opacity:1; transform:translate(14px,16px) scale(1); }
+
+  /* decorative reticle elements removed for a cleaner look */
+  #cursor-view .cv-ring, #cursor-view .cv-scan, #cursor-view .cv-corner,
+  #cursor-view .cv-cross, #cursor-view .cv-dot { display:none; }
+
+  /* readout pill next to the pointer */
+  #cursor-view .cv-label { display:flex; align-items:center; gap:6px; white-space:nowrap;
+    background:rgba(19,19,19,.85); backdrop-filter:blur(4px);
+    border:1px solid rgba(255,255,255,.12); border-radius:999px;
+    padding:3px 10px; box-shadow:0 4px 14px rgba(0,0,0,.35); }
+  #cursor-view .cv-text  { display:none; }
+  #cursor-view .cv-count { color:#e2e2e2; font-size:9px; font-weight:700; letter-spacing:.12em; text-transform:uppercase; }
+
+  /* Scan-line sweep over project images: disabled for a cleaner hover */
+  .img-scan { display:none; }
+
+  /* ── Grain overlay (editorial polish) ── */
+  #grain { position:fixed; inset:0; pointer-events:none; z-index:9997; opacity:.035; mix-blend-mode:overlay;
+    background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E"); }
+
+  /* ── Magnetic buttons (transform set via JS) ── */
+  .magnetic { transition:transform .35s cubic-bezier(.22,1,.36,1); will-change:transform; }
+
+  /* ── Project number badge (image-side) ── */
+  .proj-num { position:absolute; top:1.1rem; left:1.25rem; font-size:13px; font-weight:900;
+    letter-spacing:.18em; color:rgba(255,175,208,.55); transition:all .45s cubic-bezier(.22,1,.36,1);
+    font-family:'Plus Jakarta Sans',sans-serif; pointer-events:none; z-index:3;
+    text-shadow:0 2px 12px rgba(0,0,0,.5); }
+  .group:hover .proj-num { font-size:42px; color:#ffafd0; letter-spacing:.05em;
+    text-shadow:0 0 32px rgba(237,90,165,.65), 0 4px 16px rgba(0,0,0,.6); }
+
+  /* ── Live time badge ── */
+  .local-time { font-variant-numeric: tabular-nums; font-family:'Plus Jakarta Sans',sans-serif;
+    font-size:10px; letter-spacing:.16em; text-transform:uppercase; font-weight:700;
+    color:#a48a93; display:inline-flex; align-items:center; gap:7px; }
+  .local-time .time-dot { width:6px; height:6px; border-radius:50%; background:#7affc4;
+    box-shadow:0 0 10px #7affc4, 0 0 4px #7affc4; animation:shimmer 2s ease-in-out infinite; }
+
+  /* ── Konami rainbow mode ── */
+  .rainbow-mode .grad-text { background:linear-gradient(90deg,#ff7a8a,#ffd86b,#7affc4,#7ad6ff,#d97aff,#ff7a8a) !important;
+    background-size:300% auto !important; -webkit-background-clip:text !important; background-clip:text !important;
+    animation:gradShift 2.8s linear infinite !important; }
+  .rainbow-mode .text-primary, .rainbow-mode .bg-primary, .rainbow-mode .border-primary { /* leave site cohesive */ }
+
+  /* Easter-egg toast */
+  #ee-toast { position:fixed; bottom:88px; left:50%; transform:translateX(-50%) translateY(20px);
+    background:rgba(31,31,31,.95); backdrop-filter:blur(12px); border:1px solid rgba(237,90,165,.35);
+    color:#ffafd0; padding:12px 22px; border-radius:999px; font-family:'Plus Jakarta Sans',sans-serif;
+    font-size:11px; font-weight:800; letter-spacing:.16em; text-transform:uppercase; z-index:10000;
+    opacity:0; pointer-events:none; transition:opacity .35s ease, transform .35s cubic-bezier(.22,1,.36,1);
+    box-shadow:0 12px 48px rgba(0,0,0,.6), 0 0 32px rgba(237,90,165,.25); }
+  #ee-toast.show { opacity:1; transform:translateX(-50%) translateY(0); }
+
+  /* hide native cursor on project images for a cleaner "view" effect on capable devices */
+  @media (hover:hover) and (pointer:fine) {
+    .proj-img-wrap, .pc-img-wrap-2 { cursor:none; }
+  }
+
+  /* ── Tab system ────────────────────────────────────── */
+  .tab-panel { display:none; }
+  .tab-btn { color:#a48a93; transition:color .25s ease, background .25s ease; }
+  .tab-btn:hover { color:#ffafd0; }
+  .tab-btn.active { background:#693c45; color:#e4a9b3; }
+  /* mobile bottom nav: only color the active item, don't use pill background */
+  .mobile-tab { color:#a48a93; }
+  .mobile-tab.active { background:transparent !important; color:#ffafd0 !important; }
+
+  /* About tab: hero shouldn't be a full screen anymore - content sits closer to fold */
+  .tab-panel[data-panel="about"] #hero { min-height:auto; padding-top:7rem; padding-bottom:6rem; }
+
+  /* ── NEW: Project image spotlight (cursor-following glow) ── */
+  .proj-img-wrap, .pc-img-wrap-2 { --mx:50%; --my:50%; }
+  .pc-img-wrap-2 { position:relative; }
+  .proj-img-wrap::after, .pc-img-wrap-2::after {
+    content:''; position:absolute; inset:0; pointer-events:none; z-index:4;
+    background:radial-gradient(circle 280px at var(--mx) var(--my), rgba(255,175,208,.22) 0%, transparent 60%);
+    opacity:0; transition:opacity .4s ease; mix-blend-mode:screen;
+  }
+  .proj-img-wrap:hover::after, .pc-img-wrap-2:hover::after { opacity:1; }
+
+  /* ── NEW: Hero photo parallax wrapper ── */
+  #hero-photo-card { transition:transform .25s cubic-bezier(.22,1,.36,1); will-change:transform; }
+
+  /* ── NEW: Directional tab slide transition ── */
+  .tab-panel.active {
+    display:block;
+    animation:tabSlide .5s cubic-bezier(.22,1,.36,1) both;
+  }
+  @keyframes tabSlide {
+    from { opacity:0; transform:translateX(var(--slide-from, 0)); }
+    to   { opacity:1; transform:translateX(0); }
+  }
+
+  /* ── NEW: Wipe reveal (clip-path from left → right) ── */
+  .reveal-wipe {
+    opacity:0;
+    clip-path: inset(0 100% 0 0);
+    transition: clip-path 1s cubic-bezier(.22,1,.36,1), opacity .55s;
+    transition-delay: .12s;
+  }
+  .reveal-wipe.visible {
+    opacity:1;
+    clip-path: inset(0 0% 0 0);
+  }
+
+  /* ── NEW: Engineering crosshair accent (CAD reticle) ── */
+  .cad-mark { display:inline-flex; align-items:center; gap:9px; }
+  .cad-mark::before {
+    content:''; display:inline-block; width:11px; height:11px; flex-shrink:0;
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 12' fill='none' stroke='%23ed5aa5' stroke-width='1'%3E%3Cline x1='6' y1='0' x2='6' y2='12'/%3E%3Cline x1='0' y1='6' x2='12' y2='6'/%3E%3Ccircle cx='6' cy='6' r='2.4'/%3E%3C/svg%3E");
+    background-size:contain; background-repeat:no-repeat;
+    animation:cadPulse 3.5s ease-in-out infinite;
+  }
+  @keyframes cadPulse {
+    0%,100% { opacity:.5; transform:rotate(0deg); }
+    50%     { opacity:1; transform:rotate(45deg); }
+  }
+
+  /* ── NEW: "Currently" live status pill (radar pulse) ── */
+  .now-pill {
+    display:inline-flex; align-items:center; gap:11px;
+    padding:7px 14px 7px 12px;
+    background:rgba(237,90,165,.07);
+    border:1px solid rgba(237,90,165,.22);
+    border-radius:999px;
+    font-family:'Plus Jakarta Sans',sans-serif;
+    font-size:10.5px; font-weight:700;
+    letter-spacing:.16em; text-transform:uppercase;
+    color:#ffafd0;
+    transition:background .3s, border-color .3s;
+  }
+  .now-pill:hover { background:rgba(237,90,165,.12); border-color:rgba(237,90,165,.4); }
+  .now-pill .now-dot {
+    width:7px; height:7px; border-radius:50%;
+    background:#ed5aa5;
+    box-shadow:0 0 8px #ed5aa5, 0 0 0 0 rgba(237,90,165,.55);
+    animation:nowPulse 1.8s ease-out infinite;
+    flex-shrink:0;
+  }
+  @keyframes nowPulse {
+    0%   { box-shadow:0 0 8px #ed5aa5, 0 0 0 0 rgba(237,90,165,.55); }
+    70%  { box-shadow:0 0 8px #ed5aa5, 0 0 0 10px rgba(237,90,165,0); }
+    100% { box-shadow:0 0 8px #ed5aa5, 0 0 0 0 rgba(237,90,165,0); }
+  }
+  .now-pill .now-sep { opacity:.5; }
+  .now-pill .now-task {
+    color:#e6dde0;
+    font-weight:600;
+    letter-spacing:.04em;
+    text-transform:none;
+    font-size:11.5px;
+  }
+
+  /* Respect users who prefer reduced motion */
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+    .reveal, .reveal-r, .reveal-scale, .reveal-wipe { opacity: 1 !important; transform: none !important; }
+    #cursor-glow { display: none !important; }
+  }
+</style>
+</head>
+<body class="antialiased overflow-x-hidden">
+
+<div id="scroll-bar"></div>
+<div id="cursor-glow"></div>
+<div id="grain" aria-hidden="true"></div>
+<div id="cursor-view" aria-hidden="true"><div class="cv-inner">
+  <span class="cv-ring"></span>
+  <span class="cv-scan"></span>
+  <span class="cv-corner cv-tl"></span><span class="cv-corner cv-tr"></span>
+  <span class="cv-corner cv-bl"></span><span class="cv-corner cv-br"></span>
+  <span class="cv-cross cv-cx"></span><span class="cv-cross cv-cy"></span>
+  <span class="cv-dot"></span>
+  <span class="cv-label"><span class="cv-text">Inspect</span><span class="cv-count">View</span></span>
+</div></div>
+<div id="ee-toast" aria-hidden="true">✦ Hidden mode unlocked</div>
+
+<!-- ══════════════ NAV ══════════════ -->
+<header id="topnav" class="fixed top-0 w-full z-50 bg-[#131313]/80 backdrop-blur-xl transition-all duration-300">
+  <nav class="flex justify-between items-center px-6 md:px-10 py-4 max-w-screen-xl mx-auto">
+    <button data-tab="about" id="logo-btn" class="font-['Plus_Jakarta_Sans'] text-xl font-extrabold tracking-tighter text-primary hover:text-primary transition-colors cursor-pointer">
+      SK
+    </button>
+    <div class="hidden md:flex items-center gap-1 text-sm bg-surface-container-low/80 backdrop-blur-sm border border-outline-variant/15 rounded-full p-1">
+      <button data-tab="about"      class="tab-btn px-4 py-1.5 rounded-full font-medium tracking-wide transition-all">About</button>
+      <button data-tab="work"       class="tab-btn px-4 py-1.5 rounded-full font-medium tracking-wide transition-all">Work</button>
+      <button data-tab="experience" class="tab-btn px-4 py-1.5 rounded-full font-medium tracking-wide transition-all">Experience</button>
+      <button data-tab="contact"    class="tab-btn px-4 py-1.5 rounded-full font-medium tracking-wide transition-all">Contact</button>
+    </div>
+    <a href="Simeon Kim - Resume (17).pdf" target="_blank" rel="noopener"
+       class="bg-primary-container text-white px-5 py-2 rounded-full text-sm font-bold font-['Plus_Jakarta_Sans'] transition-all hover:shadow-[0_0_20px_rgba(237,90,165,.4)] active:scale-95">
+      Resume ↗
+    </a>
+  </nav>
+</header>
+
+<!-- ══════════════ MAIN ══════════════ -->
+<main>
+
+  <!-- ╔══ TAB: ABOUT ══╗ -->
+  <div class="tab-panel" data-panel="about">
+
+  <!-- ─── HERO ─── -->
+  <section id="hero" class="relative min-h-screen flex items-center pt-24 pb-20 px-6 md:px-12 overflow-hidden">
+    <div class="blob" style="width:700px;height:700px;top:-200px;right:-180px;"></div>
+    <div class="blob" style="width:350px;height:350px;bottom:-80px;left:-80px;opacity:.5;"></div>
+
+    <div class="max-w-screen-xl mx-auto w-full">
+      <!-- Label -->
+      <div class="reveal flex items-center gap-3 mb-10">
+        <span class="w-8 h-px bg-primary"></span>
+        <span class="text-primary uppercase tracking-[.2em] text-[11px] font-bold font-['Plus_Jakarta_Sans']">Mechanical Engineering Portfolio</span>
+      </div>
+
+      <!-- Two-column grid -->
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-center">
+
+        <!-- Left: text -->
+        <div class="lg:col-span-7">
+          <h1 class="reveal d1 font-['Plus_Jakarta_Sans'] font-black text-[clamp(52px,8vw,104px)] leading-[.88] tracking-tighter text-on-surface">
+            <span data-scramble>SIMEON</span><br/><span class="grad-text" data-scramble>KIM.</span>
+          </h1>
+          <p class="reveal d2 text-on-surface-variant text-lg md:text-xl leading-relaxed mt-8 max-w-lg">
+            Hi, I am an 18 year old designer from San Diego, California. I build a lot of things that fail, and a few that work.
+          </p>
+
+          <!-- Currently status - live indicator, easy to update -->
+          <div class="reveal d3 mt-6">
+            <span class="now-pill">
+              <span class="now-dot"></span>
+              <span>Currently</span>
+              <span class="now-sep">·</span>
+              <span class="now-task">Open to internships &amp; design work</span>
+            </span>
+          </div>
+
+          <!-- Stats -->
+          <div class="reveal d3 flex flex-wrap items-center gap-6 mt-10">
+            <div>
+              <div class="text-3xl font-black text-primary font-['Plus_Jakarta_Sans']">Yale</div>
+              <div class="text-[10px] uppercase tracking-[.15em] text-on-surface-variant mt-1">Class of '30</div>
+            </div>
+            <div class="w-px h-10 bg-outline-variant/30 hidden sm:block"></div>
+            <div>
+              <div class="text-3xl font-black text-primary font-['Plus_Jakarta_Sans']" data-count>Top 0.4%</div>
+              <div class="text-[10px] uppercase tracking-[.15em] text-on-surface-variant mt-1">FRC Dean's List</div>
+            </div>
+            <div class="w-px h-10 bg-outline-variant/30 hidden sm:block"></div>
+            <div>
+              <div class="text-3xl font-black text-primary font-['Plus_Jakarta_Sans']">CSWP</div>
+              <div class="text-[10px] uppercase tracking-[.15em] text-on-surface-variant mt-1">+ 4 Specializations</div>
+            </div>
+            <div class="w-px h-10 bg-outline-variant/30 hidden md:block"></div>
+            <div class="hidden md:block">
+              <div class="text-3xl font-black text-primary font-['Plus_Jakarta_Sans']" data-count>2</div>
+              <div class="text-[10px] uppercase tracking-[.15em] text-on-surface-variant mt-1">Internships</div>
+            </div>
+          </div>
+
+          <!-- CTAs -->
+          <div class="reveal d4 flex flex-wrap gap-4 mt-10">
+            <a href="#projects"
+               class="magnetic bg-primary-container text-white px-8 py-3.5 rounded-full font-bold font-['Plus_Jakarta_Sans'] text-sm tracking-wide transition-all hover:shadow-[0_0_32px_rgba(237,90,165,.45)] active:scale-95">
+              View Projects
+            </a>
+            <a href="#contact"
+               class="magnetic bg-surface-container border border-outline-variant/30 text-on-surface px-8 py-3.5 rounded-full font-bold font-['Plus_Jakarta_Sans'] text-sm tracking-wide transition-all hover:bg-surface-container-high active:scale-95">
+              Get in Touch
+            </a>
+          </div>
+        </div>
+
+        <!-- Right: profile photo - face clearly visible -->
+        <div class="reveal-r d2 lg:col-span-5 flex justify-center lg:justify-end">
+          <div id="hero-photo-card" class="relative w-full max-w-[360px]">
+            <!-- outer decorative rings -->
+            <div class="absolute -inset-5 rounded-[36px] border border-primary/8 pointer-events-none"></div>
+            <div class="absolute -inset-10 rounded-[44px] border border-primary/4 pointer-events-none"></div>
+
+            <!-- photo card -->
+            <div class="relative rounded-3xl overflow-hidden" style="aspect-ratio:3/4;">
+              <div class="photo-ring"></div>
+              <img src="images/profile.webp" fetchpriority="high" decoding="async"
+                   alt="Simeon Kim"
+                   class="w-full h-full object-cover"
+                   style="object-position: 50% 20%; filter:brightness(1.02) contrast(1.04);" />
+              <!-- subtle bottom vignette -->
+              <div class="absolute bottom-0 inset-x-0 h-1/5 bg-gradient-to-t from-[#131313]/50 to-transparent pointer-events-none"></div>
+            </div>
+
+            <!-- floating badges -->
+            <div class="animate-float absolute -top-5 -left-5 bg-primary-container/90 backdrop-blur-md rounded-2xl px-4 py-3 shadow-xl shadow-primary-container/20 z-10">
+              <div class="text-white text-xs font-black font-['Plus_Jakarta_Sans']">Yale '30</div>
+              <div class="text-white/70 text-[9px] uppercase tracking-wider mt-0.5">New Haven, CT</div>
+            </div>
+            <div class="animate-float-alt absolute -bottom-5 -right-5 bg-surface-container border border-outline-variant/30 backdrop-blur-md rounded-2xl px-4 py-3 shadow-xl z-10">
+              <div class="text-primary text-xs font-black font-['Plus_Jakarta_Sans']">FRC 2658</div>
+              <div class="text-on-surface-variant text-[9px] uppercase tracking-wider mt-0.5">President · Design Lead</div>
+            </div>
+
+            <!-- pulse dot -->
+            <div class="absolute top-5 right-5 z-10">
+              <div class="w-2.5 h-2.5 rounded-full bg-primary/70"></div>
+              <div class="absolute inset-0 rounded-full bg-primary/30 animate-pulse-ring"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Philosophy callout - minimal, easy to find -->
+      <button id="about-philo-btn" class="reveal d4 gb relative w-full md:w-auto md:inline-flex flex md:max-w-md items-center justify-between gap-6 text-left bg-surface-container hover:bg-surface-container-high rounded-2xl px-5 py-3.5 mt-12 glow-hover transition-all overflow-hidden cursor-pointer group/philo">
+        <!-- subtle ambient glow inside the card -->
+        <div class="absolute -top-12 -right-12 w-36 h-36 rounded-full pointer-events-none" style="background:radial-gradient(circle,rgba(237,90,165,.18) 0%,transparent 70%);"></div>
+
+        <div class="relative flex items-center gap-3">
+          <span class="w-1.5 h-1.5 rounded-full bg-primary"></span>
+          <span class="text-on-surface text-sm font-semibold font-['Plus_Jakarta_Sans']">More about me</span>
+          <span class="text-on-surface-variant text-xs hidden sm:inline">· how I think &amp; why I build</span>
+        </div>
+        <span class="material-symbols-outlined text-primary text-[18px] relative group-hover/philo:translate-x-1 transition-transform">arrow_forward</span>
+      </button>
+
+      <!-- Ticker -->
+      <div class="ticker-wrap overflow-hidden mt-12 reveal d5">
+        <div class="flex animate-ticker whitespace-nowrap">
+          <span class="ticker-inner"></span>
+          <span class="ticker-inner"></span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- (identity bento removed - philosophy callout is now inside the hero) -->
+
+  </div><!-- ╚══ /TAB: ABOUT ══╝ -->
+
+  <!-- ╔══ TAB: WORK ══╗ -->
+  <div class="tab-panel" data-panel="work">
+
+  <!-- ─── FLAGSHIP PROJECTS ─── -->
+  <section id="projects" class="px-6 md:px-12 py-24 max-w-screen-xl mx-auto">
+    <div class="flex flex-col md:flex-row justify-between items-start md:items-end mb-16 gap-4">
+      <div class="reveal">
+        <span class="text-primary font-bold uppercase tracking-[.2em] text-[11px] cad-mark">Selected Works</span>
+        <h2 class="reveal-wipe text-4xl md:text-5xl font-black mt-2 text-on-surface font-['Plus_Jakarta_Sans'] tracking-tight"> Projects</h2>
+      </div>
+      <div class="reveal d1 flex flex-wrap gap-2" id="filter-chips">
+        <button data-filter="all"         class="chip chip-active px-4 py-1.5 rounded-full text-[10px] font-bold uppercase tracking-wider transition-all">All</button>
+        <button data-filter="frc"         class="chip bg-surface-container text-on-surface-variant px-4 py-1.5 rounded-full text-[10px] font-bold uppercase tracking-wider transition-all hover:bg-surface-container-high">FRC</button>
+        <button data-filter="cnc"         class="chip bg-surface-container text-on-surface-variant px-4 py-1.5 rounded-full text-[10px] font-bold uppercase tracking-wider transition-all hover:bg-surface-container-high">CNC</button>
+        <button data-filter="prosthetics" class="chip bg-surface-container text-on-surface-variant px-4 py-1.5 rounded-full text-[10px] font-bold uppercase tracking-wider transition-all hover:bg-surface-container-high">Prosthetics</button>
+        <button data-filter="cad"         class="chip bg-surface-container text-on-surface-variant px-4 py-1.5 rounded-full text-[10px] font-bold uppercase tracking-wider transition-all hover:bg-surface-container-high">CAD</button>
+      </div>
+    </div>
+
+    <div class="space-y-32" id="flagship-projects">
+
+      <!-- FRC 2026 -->
+      <div class="proj-item reveal flex flex-col lg:flex-row gap-12 lg:gap-16 items-center" data-category="frc"
+        data-title="FRC 2026 Robot - Reefscape"
+        data-kicker="FRC Robotics · 2026 · Won First Competition Since 2018"
+        data-tags="FRC,Onshape,SolidWorks,FEA,Topology Optimization,Fabrication,Turret"
+        data-desc="Our most complete robot and strongest result - first competition win since 2018, second in team history. I designed 4 of 8 core mechanisms, including our first turreted shooter and second-generation elevator, and led manufacturing and integration across the team. This season I focused heavily on electrical and system-level design - after previous failures - which resulted in near-zero electrical issues throughout competition. I also expanded into metal manufacturing, including sheet metal design and bending, which improved part consistency compared to previous seasons."
+        data-highlights='["First competition win since 2018 - only the second win in team history","Designed 4/8 mechanisms: first turreted shooter, second-generation elevator, and more","Prioritized electrical system design - eliminated recurring failures from prior seasons","Led full manufacturing, assembly, and subsystem integration across the build season","Expanded into sheet metal design and bending - improved part consistency over prior seasons"]'
+        data-imgs='["images/frc2026-robot.webp","images/frc2026-real.webp","images/frc2026-competition.webp","images/frc2026-intake.webp","images/frc2026-elevator.jpg","images/frc2026-coral.jpg","images/frc2026-chassis.jpg","images/frc2026-climber.jpg"]'>
+        <div class="w-full lg:w-1/2 aspect-video rounded-2xl overflow-hidden bg-surface-container group cursor-pointer relative tilt gb proj-img-wrap">
+          <img loading="lazy" decoding="async" src="images/frc2026-competition.webp" alt="FRC 2026" class="proj-img w-full h-full object-cover brightness-75"/>
+          <div class="absolute inset-0 bg-gradient-to-t from-background/70 to-transparent"></div>
+          <div class="proj-num">01</div>
+          <div class="absolute top-4 right-4"><span class="tag">🏆 Won 2026 San Diego Districts</span></div>
+          <div class="absolute bottom-5 left-5 opacity-0 group-hover:opacity-100 transition-all duration-300 translate-y-1 group-hover:translate-y-0">
+            <span class="text-primary text-xs font-bold uppercase tracking-widest flex items-center gap-1">View Details <span class="material-symbols-outlined text-[16px]">east</span></span>
+          </div>
+        </div>
+        <div class="w-full lg:w-1/2">
+          <span class="text-on-surface-variant font-['Plus_Jakarta_Sans'] text-sm tracking-wider">01 / FRC ROBOTICS</span>
+          <h3 class="text-3xl md:text-4xl font-black text-on-surface mt-3 mb-5 tracking-tight font-['Plus_Jakarta_Sans']">FRC 2026 Robot</h3>
+          <p class="text-on-surface-variant leading-relaxed text-base mb-6">First competition win since 2018 - second in team history. Designed 4/8 mechanisms including our first turreted shooter and second-gen elevator. Led manufacturing and integration, and eliminated recurring electrical failures through intentional system-level design.</p>
+          <div class="flex gap-6 mb-8">
+            <div><div class="text-2xl font-black text-primary font-['Plus_Jakarta_Sans']" data-count>4/8</div><div class="text-[10px] uppercase tracking-widest text-on-surface-variant mt-1">Mechanisms</div></div>
+            <div class="w-px bg-outline-variant/30"></div>
+            <div><div class="text-2xl font-black text-primary font-['Plus_Jakarta_Sans']" data-count>2000+</div><div class="text-[10px] uppercase tracking-widest text-on-surface-variant mt-1">Parts</div></div>
+            <div class="w-px bg-outline-variant/30"></div>
+            <div><div class="text-2xl font-black text-primary font-['Plus_Jakarta_Sans']" data-count>6 wk</div><div class="text-[10px] uppercase tracking-widest text-on-surface-variant mt-1">Build</div></div>
+          </div>
+          <button class="open-detail text-primary font-bold flex items-center gap-2 group/btn text-glow cursor-pointer">
+            View Full Case Study <span class="material-symbols-outlined group-hover/btn:translate-x-1 transition-transform">east</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- FRC 2025 -->
+      <div class="proj-item reveal flex flex-col lg:flex-row-reverse gap-12 lg:gap-16 items-center" data-category="frc"
+        data-title="FRC 2025 Robot"
+        data-kicker="FRC Robotics · Dean's List Season"
+        data-tags="FRC,Onshape,SolidWorks,FEA,Leadership"
+        data-desc="A transition from reactive building to more structured design - with clear gaps. I designed 4 of 7 mechanisms, including the team's first two-stage elevator using a cascading cable system. The design choice simplified packaging and assembly, but introduced challenges in tensioning and consistency that I had to learn to manage. I also designed the swerve drivetrain, hopper, and arm, while leading manufacturing. This was my first time working closely with controls - particularly PID and basic feedforward - as we struggled to stabilize arm motion. One of the biggest takeaways was what I didn't do well: I did not invest enough in electrical system design. That showed up as recurring failures and inconsistent performance, which directly shaped how I approached the following year."
+        data-highlights='["FRC Dean&#39;s List Finalist 2025 - top 0.2% of 90,000+ participants globally","Designed 4/7 mechanisms: first two-stage cascading cable elevator, swerve drivetrain, hopper, and arm","Implemented cascading cable elevator system - learned to manage tensioning and consistency tradeoffs", "Identified electrical system design as a major weakness - directly shaped the 2026 approach","Developed deeper understanding of how mechanical and electrical reliability are inseparable"]'
+        data-imgs='["images/frc2025-render.webp","images/frc2025-competition.webp", "images/frc2025-cad.webp","images/frc2025-elevator.webp"]'>
+        <div class="w-full lg:w-1/2 aspect-video rounded-2xl overflow-hidden bg-surface-container group cursor-pointer relative tilt gb proj-img-wrap">
+          <img loading="lazy" decoding="async" src="images/frc2025-competition.webp" alt="FRC 2025" class="proj-img w-full h-full object-cover brightness-75"/>
+          <div class="absolute inset-0 bg-gradient-to-t from-background/70 to-transparent"></div>
+          <div class="proj-num">02</div>
+          <div class="absolute bottom-5 right-5 opacity-0 group-hover:opacity-100 transition-all duration-300 translate-y-1 group-hover:translate-y-0">
+            <span class="text-primary text-xs font-bold uppercase tracking-widest flex items-center gap-1">View Details <span class="material-symbols-outlined text-[16px]">east</span></span>
+          </div>
+        </div>
+        <div class="w-full lg:w-1/2">
+          <span class="text-on-surface-variant font-['Plus_Jakarta_Sans'] text-sm tracking-wider">02 / FRC ROBOTICS</span>
+          <h3 class="text-3xl md:text-4xl font-black text-on-surface mt-3 mb-5 tracking-tight font-['Plus_Jakarta_Sans']">FRC 2025 Robot</h3>
+          <p class="text-on-surface-variant leading-relaxed text-base mb-6">A step toward more structured design - with honest gaps. Designed the team's first two-stage cascading cable elevator, swerve drivetrain, hopper, and arm. The season that revealed electrical system design as a critical weakness, reshaping the next year's approach.</p>
+          <div class="flex gap-6 mb-8">
+            <div><div class="text-2xl font-black text-primary font-['Plus_Jakarta_Sans']" data-count>4/7</div><div class="text-[10px] uppercase tracking-widest text-on-surface-variant mt-1">Mechanisms</div></div>
+            <div class="w-px bg-outline-variant/30"></div>
+            <div><div class="text-2xl font-black text-primary font-['Plus_Jakarta_Sans']" data-count>6 wk</div><div class="text-[10px] uppercase tracking-widest text-on-surface-variant mt-1">Build</div></div>
+          </div>
+          <button class="open-detail text-primary font-bold flex items-center gap-2 group/btn text-glow cursor-pointer">
+            View Full Case Study <span class="material-symbols-outlined group-hover/btn:translate-x-1 transition-transform">east</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- FRC 2024 -->
+      <div class="proj-item reveal flex flex-col lg:flex-row gap-12 lg:gap-16 items-center" data-category="frc"
+        data-title="FRC 2024 Robot"
+        data-kicker="FRC Robotics · Turnaround Season"
+        data-tags="FRC,SolidWorks,4-Bar Linkage,Intake,Shooter,Cost Management,Fabrication"
+        data-desc="A reset in design approach - and where most of the fundamentals came from. I developed the intake as a 4-bar linkage by working through geometry first, using sketches (both by hand and in CAD) to validate motion before building. That led to a dual-function intake/indexer, reducing part count and simplifying the system. I handled manufacturing for both the intake and shooter. Mid-season, the intake failed repeatedly because it was only driven from one side, causing uneven loading and twisting across the structure. Fixing it required redesigning to drive both sides - introducing me to load distribution and why symmetric power transmission matters. This was also my first time using FEA and topology optimization to remove unnecessary material from structural plates. The shooter was prototyped physically before finalizing in CAD, and both systems were designed to be modular for fast iteration."
+        data-highlights='["Best in-person performance since 2019 - 2nd-best overall in 16 years","Geometry-first approach: worked out 4-bar linkage kinematics by hand before touching CAD","Dual-function intake/indexer: one mechanism doing two jobs - reduced part count significantly","Diagnosed and fixed asymmetric drive failure mid-season: redesigned to drive both sides","First use of FEA and topology optimization on structural plates to minimize weight","Coordinated external CNC manufacturing - sent part drawings to local shop for key components","FRC Dean&#39;s List Semifinalist 2024 - top 2% globally · 25% cost reduction"]'
+        data-imgs='["images/frc2024-competition.jpg", "images/frc2024-competitionhang.webp", "images/frc2024-intake-assembled.jpg", "images/frc2024-intake-front.jpg", "images/frc2024-linkage.jpg", "images/frc2024-real.jpg", "images/frc2024-shootergood.webp"]'>
+        <div class="w-full lg:w-1/2 aspect-video rounded-2xl overflow-hidden bg-surface-container group cursor-pointer relative tilt gb proj-img-wrap">
+          <img loading="lazy" decoding="async" src="images/frc2024-competition.jpg" alt="FRC 2024" class="proj-img w-full h-full object-cover brightness-75"/>
+          <div class="absolute inset-0 bg-gradient-to-t from-background/70 to-transparent"></div>
+          <div class="proj-num">03</div>
+        </div>
+        <div class="w-full lg:w-1/2">
+          <span class="text-on-surface-variant font-['Plus_Jakarta_Sans'] text-sm tracking-wider">03 / FRC ROBOTICS</span>
+          <h3 class="text-3xl md:text-4xl font-black text-on-surface mt-3 mb-5 tracking-tight font-['Plus_Jakarta_Sans']">FRC 2024 Robot</h3>
+          <p class="text-on-surface-variant leading-relaxed text-base mb-6">The season fundamentals were built. Geometry-first 4-bar linkage intake that doubled as an indexer. Mid-season failure diagnosis led to a full structural redesign. First use of FEA, topology optimization, and external CNC coordination.</p>
+          <div class="flex gap-6 mb-8">
+            <div><div class="text-2xl font-black text-primary font-['Plus_Jakarta_Sans']" data-count>3/5</div><div class="text-[10px] uppercase tracking-widest text-on-surface-variant mt-1">Mechanisms</div></div>
+            <div class="w-px bg-outline-variant/30"></div>
+            <div><div class="text-2xl font-black text-primary font-['Plus_Jakarta_Sans']" data-count>6 wk</div><div class="text-[10px] uppercase tracking-widest text-on-surface-variant mt-1">Build</div></div>
+          </div>
+          <button class="open-detail text-primary font-bold flex items-center gap-2 group/btn text-glow cursor-pointer">
+            View Full Case Study <span class="material-symbols-outlined group-hover/btn:translate-x-1 transition-transform">east</span>
+          </button>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ─── PROJECT ARCHIVE ─── -->
+  <section class="px-6 md:px-12 py-24 bg-surface-container-low/40">
+    <div class="max-w-screen-xl mx-auto">
+      <div class="reveal flex items-center gap-4 mb-12">
+        <span class="w-8 h-px bg-primary/40"></span>
+        <h2 class="text-[11px] text-primary font-bold uppercase tracking-[.2em]">Project Archive</h2>
+        <div class="flex-grow h-px bg-outline-variant/20"></div>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+
+        <!-- CNC -->
+        <div class="proj-item reveal arc-card gb bg-surface-container rounded-2xl overflow-hidden group cursor-pointer" data-category="cnc"
+          data-title="CNC Manufacturing - Kinetic CNC"
+          data-kicker="Manufacturing Internship · Summer 2024"
+          data-tags="CNC,4-Axis HAAS,SolidWorks,GD&T,Fixtures,Reverse Engineering,3D Printing"
+          data-desc="A summer internship running commercial production on 4-axis HAAS CNC machines with three distinct design projects. (1) Reverse Engineering: Kinetic CNC acquired a company that wouldn't share part models. I reverse-engineered the missing part from limited physical information - featuring a Loft and multiple angled extrudes, making it surprisingly difficult to model. (2) 4-Axis Fixture: Designed a modular fixture in SolidWorks for the HAAS that uses clamping action from toe tabs on offset planes to hold commercially sold razor heads - enabling features that would be otherwise unrealistic. (3) Sandblasting Fixture: Solved a tedious masking problem by designing a 3D-printable compliant snap-in fixture that exposes only the center handle region for sandblasting, protecting the rest of the part."
+          data-highlights='["Operated 4-axis HAAS CNC machines on live commercial production runs - hundreds of parts","Reverse engineered missing part model from physical sample using Loft and angled extrudes","Designed modular 4-axis fixture with toe-tab clamping for razor head production","Designed 3D-printable sandblasting fixture - eliminated tedious manual masking process","Gained hands-on GD&T, machine maintenance, and production quality oversight"]'
+          data-imgs='["images/cnc-parts-foam.webp","images/cnc_handles.webp", "images/reverse_engineering.png","images/cnc_project.webp","images/sandblaster_cnc.webp","images/cnc-parts-calipers.webp"]'>
+          <div class="aspect-video overflow-hidden"><img loading="lazy" decoding="async" src="images/cnc-4axis-fixture.jpg" alt="CNC" class="proj-img w-full h-full object-cover brightness-70"/></div>
+          <div class="p-6">
+            <p class="text-[10px] text-on-surface-variant uppercase tracking-widest mb-2">Manufacturing</p>
+            <h4 class="text-lg font-bold text-on-surface group-hover:text-primary transition-colors font-['Plus_Jakarta_Sans']">CNC Intern</h4>
+            <p class="text-sm text-on-surface-variant mt-2 leading-relaxed">4-axis HAAS. Commercial production. SolidWorks fixturing.</p>
+            <div class="flex gap-2 mt-4"><span class="tag">HAAS</span><span class="tag">GD&T</span></div>
+          </div>
+        </div>
+
+        <!-- Prosthetics internship -->
+        <div class="proj-item reveal d1 arc-card gb bg-surface-container rounded-2xl overflow-hidden group cursor-pointer" data-category="prosthetics"
+          data-title="Prosthetics Design - Robard Bionics"
+          data-kicker="Design Internship · Robard Bionics · 2025"
+          data-tags="SolidWorks,Medical Devices,Prosthetics,Biomechanics"
+          data-desc="Working directly with Robard Bionics, I designed distal attachments and refined the aesthetic of both a pinky prosthetic and a lower limb prosthetic in SolidWorks. Shadowing client consultations gave direct exposure to how these decisions affect amputee patients in daily life."
+          data-highlights='["Designed multiple distal attachments for prosthetic devices","Refined pinky prosthetic for functional and aesthetic requirements","Contributed to lower limb prosthetic aesthetic redesign","Shadowed client consultations - observed engineering impact on amputee patients first-hand","Medical device design under real clinical constraints"]'
+          data-imgs='[]'>
+          <div class="no-photo aspect-video flex items-center justify-center">
+            <div class="text-center">
+              <div class="w-10 h-10 rounded-full border border-outline-variant/40 flex items-center justify-center mx-auto mb-3">
+                <span class="material-symbols-outlined text-on-surface-variant text-[18px]">accessibility_new</span>
+              </div>
+              <span class="text-[9px] font-bold uppercase tracking-[.2em] text-on-surface-variant">Robard Bionics</span>
+            </div>
+          </div>
+          <div class="p-6">
+            <p class="text-[10px] text-on-surface-variant uppercase tracking-widest mb-2">Prosthetics</p>
+            <h4 class="text-lg font-bold text-on-surface group-hover:text-primary transition-colors font-['Plus_Jakarta_Sans']">Prosthetics Design Intern</h4>
+            <p class="text-sm text-on-surface-variant mt-2 leading-relaxed">Distal attachments &amp; lower limb refinement. Real patients.</p>
+            <div class="flex gap-2 mt-4"><span class="tag">Medical</span><span class="tag">SolidWorks</span></div>
+          </div>
+        </div>
+
+        <!-- Cycloidal Drive -->
+        <div class="proj-item reveal d2 arc-card gb bg-surface-container rounded-2xl overflow-hidden group cursor-pointer" data-category="cad"
+          data-title="Cycloidal Drive Gearbox - 14:1 Custom Design"
+          data-kicker="Independent CAD Project · Cost-Optimized for 3D Printing"
+          data-tags="SolidWorks,Gearbox Design,FEA,3D Printing,Cost Optimization,Actuator Design"
+          data-desc="Independently designed a 14:1 custom cycloidal drive from scratch in SolidWorks, with a focus on minimizing cost and optimizing for 3D printing. Used two epicycloid rotors rather than one to cancel out the radial forces produced by the eccentric cams. Used 3D-printed shafts paired with cheap skateboard bearings for tangential cycloid motion - instead of aluminum/steel pins - dramatically reducing cost and improving manufacturability."
+          data-highlights='["14:1 reduction ratio - fully custom designed from scratch in SolidWorks","Dual epicycloid rotors cancel radial forces from eccentric cams - smoother output","3D-printed shafts + skateboard bearings replace steel pins - major cost reduction","Designed entirely for 3D printability - no metal machining required","Purpose: understand actuator design and compare cycloidal vs. classic gearbox tradeoffs"]'
+          data-imgs='["images/cycloidal-drive.webp","images/cycloidal-section.webp"]'>
+          <div class="aspect-video overflow-hidden"><img loading="lazy" decoding="async" src="images/cycloidal-drive.webp" alt="Cycloidal" class="proj-img w-full h-full object-cover brightness-70"/></div>
+          <div class="p-6">
+            <p class="text-[10px] text-on-surface-variant uppercase tracking-widest mb-2">CAD Design</p>
+            <h4 class="text-lg font-bold text-on-surface group-hover:text-primary transition-colors font-['Plus_Jakarta_Sans']">Cycloidal Drive</h4>
+            <p class="text-sm text-on-surface-variant mt-2 leading-relaxed">Custom 14:1 gearbox. FEA-validated. 3D-printable.</p>
+            <div class="flex gap-2 mt-4"><span class="tag">Gearbox</span></div>
+          </div>
+        </div>
+
+        <!-- Solar -->
+        <div class="proj-item reveal d3 arc-card gb bg-surface-container rounded-2xl overflow-hidden group cursor-pointer" data-category="cad"
+          data-title="Solar Panel Tracking Mechanism"
+          data-kicker="Modeling the Future Challenge · Semifinalist · Independent Design"
+          data-tags="SolidWorks,Mechanism Design,Actuators,Kinematics,F-150 Lightning,Low Cost"
+          data-desc="Challenged to design a mechanism that fits fully packaged in the bed of an F-150 Lightning truck and provides at least 900W of power. The current design provides 1000W. Designed to be low cost and require only 2-axis machining throughout. The mechanism uses a lead-screw driven linkage to tilt solar panels to optimal sun-tracking angles."
+          data-highlights='["Fits fully packaged in F-150 Lightning truck bed - hard geometric constraint","Provides 1000W - exceeds 900W requirement","Designed for low cost: requires only 2-axis machining throughout","Fully extended and packaged states modeled in SolidWorks with motion analysis","Named Semifinalist in the Modeling the Future Challenge"]'
+          data-imgs='["images/solarpowerextended.png","images/solarpowerclosed.webp","images/solarpowerframe.webp"]'>
+          <div class="aspect-video overflow-hidden"><img loading="lazy" decoding="async" src="images/solarpowerextended.png" alt="Solar" class="proj-img w-full h-full object-cover brightness-70"/></div>
+          <div class="p-6">
+            <p class="text-[10px] text-on-surface-variant uppercase tracking-widest mb-2">CAD · Competition</p>
+            <h4 class="text-lg font-bold text-on-surface group-hover:text-primary transition-colors font-['Plus_Jakarta_Sans']">Solar Tracker</h4>
+            <p class="text-sm text-on-surface-variant mt-2 leading-relaxed">Modeling the Future Semifinalist. Lead-screw mechanism.</p>
+            <div class="flex gap-2 mt-4"><span class="tag">Mechanism</span></div>
+          </div>
+        </div>
+
+        <!-- Aperture / Jeremy Fielding -->
+        <div class="proj-item reveal arc-card gb bg-surface-container rounded-2xl overflow-hidden group cursor-pointer" data-category="cad"
+          data-title="Aperture Mechanism - Jeremy Fielding"
+          data-kicker="Client Commission · Jeremy Fielding (1M+ Subscribers)"
+          data-tags="Fusion 360,Mechanism Design,Aperture,Client Work,Professional Commission"
+          data-desc="Commissioned by Jeremy Fielding - mechanical engineer and YouTube creator with 1M+ subscribers, known for advanced mechanism design and engineering education - to independently design a custom aperture mechanism for one of his upcoming videos. Designed from brief through final CAD deliverable, working directly with a professional engineer client."
+          data-highlights='["Commissioned directly by Jeremy Fielding for a professional YouTube production","Designed custom aperture mechanism from brief to final Fusion360 deliverable","Jeremy Fielding is known for advanced mechanism design (1M+ subscribers)","Demonstrates ability to deliver professional-grade work on a client timeline"]'
+          data-imgs='[]'>
+          <div class="no-photo aspect-video flex items-center justify-center">
+            <div class="text-center">
+              <div class="w-10 h-10 rounded-full border border-outline-variant/40 flex items-center justify-center mx-auto mb-3">
+                <span class="material-symbols-outlined text-on-surface-variant text-[18px]">movie</span>
+              </div>
+              <span class="text-[9px] font-bold uppercase tracking-[.2em] text-on-surface-variant">Jeremy Fielding</span>
+            </div>
+          </div>
+          <div class="p-6">
+            <p class="text-[10px] text-on-surface-variant uppercase tracking-widest mb-2">Client Commission</p>
+            <h4 class="text-lg font-bold text-on-surface group-hover:text-primary transition-colors font-['Plus_Jakarta_Sans']">Aperture Mechanism</h4>
+            <p class="text-sm text-on-surface-variant mt-2 leading-relaxed">Professional commission for YouTube engineer Jeremy Fielding (1M+ subs).</p>
+            <div class="flex gap-2 mt-4"><span class="tag">Client Work</span></div>
+          </div>
+        </div>
+
+        <!-- Independent Prosthetics -->
+        <div class="proj-item reveal d1 arc-card gb bg-surface-container rounded-2xl overflow-hidden group cursor-pointer" data-category="prosthetics"
+          data-title="Independent Prosthetics - Topology-Optimized Lower Limb"
+          data-kicker="Independent Project · SolidWorks · Topology Optimization"
+          data-tags="SolidWorks,Topology Optimization,Prosthetics,Biomechanics,FEA,Independent"
+          data-desc="Independently designed a topology-optimized lower limb prosthetic in SolidWorks - separate from the Robard Bionics internship. Applied topology optimization to derive an organic, load-path-following geometry that minimizes material use while maintaining structural integrity under gait loading. The result closely resembles structures found in skeletal anatomy."
+          data-highlights='["Independently designed - not part of internship work, driven by personal engineering interest","Applied topology optimization: material follows load paths, removed from low-stress regions","Organic geometry emerges from structural analysis - mirrors skeletal anatomy","Designed in SolidWorks with FEA validation of key load cases","Demonstrates understanding of biomechanics, structural optimization, and medical device design principles"]'
+          data-imgs='["images/prosthetics-leg1.jpg","images/prosthetics-leg2.jpg","images/prosthetics-leg3.jpg"]'>
+          <div class="pc-img-wrap"><img class="pc-img" src="images/prosthetics-leg1.jpg" alt="Prosthetics" loading="lazy"/></div>
+          <div class="p-6">
+            <p class="text-[10px] text-on-surface-variant uppercase tracking-widest mb-2">Independent · Prosthetics</p>
+            <h4 class="text-lg font-bold text-on-surface group-hover:text-primary transition-colors font-['Plus_Jakarta_Sans']">Prosthetics - Topology Opt.</h4>
+            <p class="text-sm text-on-surface-variant mt-2 leading-relaxed">Load-path geometry. FEA validated. Mirrors skeletal anatomy.</p>
+            <div class="flex gap-2 mt-4"><span class="tag">Topology Opt.</span></div>
+          </div>
+        </div>
+
+        <!-- Open-source elevators -->
+        <div class="proj-item reveal d2 arc-card gb bg-surface-container rounded-2xl overflow-hidden group cursor-pointer" data-category="cad"
+          data-title="Open-Source FRC Elevators - GitHub"
+          data-kicker="Independent Project · Open Source · Self-Taught"
+          data-tags="SolidWorks,Elevators,Open Source,GitHub,Variables,FRC Community"
+          data-desc="When teaching myself FRC mechanism design, I couldn't find any SolidWorks models or tutorials for elevators online. Through dozens of hours troubleshooting and studying robot photos, I figured it out - then designed 3 complete elevator types (cable driven, chain driven, and belt driven 2-stage) using variables for custom sizing, and published them open source on GitHub to help other FRC teams and students."
+          data-highlights='["Designed 3 elevator types: cable-driven, chain-driven, and belt-driven 2-stage","All models use SolidWorks equations/variables - fully configurable for custom team builds","Published open source on GitHub - helping other FRC teams access complex mechanism designs","Entirely self-taught: no tutorials existed, figured it out from photos and troubleshooting","Demonstrates initiative, self-direction, and commitment to the FRC community"]'
+          data-imgs='["images/extended_elevator.webp","images/Belt-driven_elevator.png","images/elevator_explodedview.webp"]'>
+          <div class="aspect-video overflow-hidden"><img loading="lazy" decoding="async" src="images/extended_elevator.webp" alt="Elevator" class="proj-img w-full h-full object-cover brightness-70"/></div>
+          <div class="p-6">
+            <p class="text-[10px] text-on-surface-variant uppercase tracking-widest mb-2">CAD · Open Source</p>
+            <h4 class="text-lg font-bold text-on-surface group-hover:text-primary transition-colors font-['Plus_Jakarta_Sans']">FRC Elevators</h4>
+            <p class="text-sm text-on-surface-variant mt-2 leading-relaxed">3 types, variable-driven. Self-taught. Published on GitHub.</p>
+            <div class="flex gap-2 mt-4"><span class="tag">Open Source</span></div>
+          </div>
+        </div>
+
+        <!-- FRC 2018 Practice Robot -->
+        <div class="proj-item reveal d3 arc-card gb bg-surface-container rounded-2xl overflow-hidden group cursor-pointer" data-category="frc"
+          data-title="FRC 2018 Robot · SolidWorks Practice Project"
+          data-kicker="Independent Practice Project · 16 Days · Designed During Finals"
+          data-tags="SolidWorks,FEA,Top-Down Assembly,Pneumatics,Gearbox Design,Elevator"
+          data-desc="A fully self-designed FRC 2018 robot modeled in SolidWorks in 16 days - during finals. The goal was deliberate practice: top-down assembly approach, embedded FEA on structural parts, and exposure to real mechanism design across pneumatics, geared systems, and pulley/sprocket driven assemblies. The timeline forced a lot of prioritization. Completed it. Key mechanisms: a 270° dead axle arm driven by a 21:1 two-stage gearbox - dead axle chosen to prevent bending under load - a 2-stage cable-driven elevator climb, tank drivetrain, and pneumatically actuated arms. The FEA work stayed within static simulation but gave a solid foundation for understanding structural loading in mechanism design."
+          data-highlights='["Completed in 16 days during finals - a deliberately hard constraint, met it","Top-down assembly design: major system relationships drove sub-component geometry","270° dead axle arm: 21:1 two-stage gearbox, 1/8\" hollow steel tube - dead axle prevents bending under load","2-stage cable-driven elevator climb, tank drivetrain, and pneumatically actuated arms","Applied SolidWorks embedded FEA (static simulation) to validate structural parts","Developed deeper understanding of pneumatics, geared systems, and pulley/sprocket mechanisms"]'
+          data-imgs='["images/frc2018-full.webp","images/frc2018-armrender.jpg","images/frc2018-cad.webp", "images/frc2018extended.webp"]'>
+          <div class="aspect-video overflow-hidden"><img loading="lazy" decoding="async" src="images/frc2018-full.webp" alt="FRC 2018 Practice Robot" class="proj-img w-full h-full object-cover brightness-70"/></div>
+          <div class="p-6">
+            <p class="text-[10px] text-on-surface-variant uppercase tracking-widest mb-2">FRC · Practice Project</p>
+            <h4 class="text-lg font-bold text-on-surface group-hover:text-primary transition-colors font-['Plus_Jakarta_Sans']">FRC 2018 Robot</h4>
+            <p class="text-sm text-on-surface-variant mt-2 leading-relaxed">16 days. SolidWorks FEA. Dead axle arm, elevator, pneumatics.</p>
+            <div class="flex gap-2 mt-4"><span class="tag">FEA</span><span class="tag">SolidWorks</span></div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  </div><!-- ╚══ /TAB: WORK ══╝ -->
+
+  <!-- ╔══ TAB: EXPERIENCE ══╗ -->
+  <div class="tab-panel" data-panel="experience">
+
+  <!-- ─── EXPERIENCE ─── -->
+  <section id="experience" class="px-6 md:px-12 py-24 max-w-screen-xl mx-auto">
+    <div class="flex items-end justify-between mb-16">
+      <div class="reveal">
+        <span class="text-primary font-bold uppercase tracking-[.2em] text-[11px] cad-mark">Background</span>
+        <h2 class="reveal-wipe text-4xl md:text-5xl font-black mt-2 text-on-surface font-['Plus_Jakarta_Sans'] tracking-tight">Experience</h2>
+      </div>
+      <div class="hidden md:block h-px bg-outline-variant/20 flex-grow mx-12 mb-3"></div>
+    </div>
+    <div class="space-y-0">
+
+      <div class="reveal exp-row flex flex-col md:flex-row gap-6 md:gap-16 py-10 border-b border-outline-variant/10 group hover:bg-surface-container-low/40 rounded-2xl px-4 transition-all">
+        <div class="md:w-44 flex-shrink-0">
+          <div class="text-primary text-xs font-bold uppercase tracking-widest">Sept 2022 – Present</div>
+          <div class="text-on-surface-variant text-[10px] uppercase tracking-widest mt-1">FRC Team 2658 Σ-Motion</div>
+        </div>
+        <div class="flex-grow">
+          <h3 class="text-2xl font-black text-on-surface font-['Plus_Jakarta_Sans'] group-hover:text-primary transition-colors">President &amp; Design Lead</h3>
+          <p class="text-on-surface-variant text-sm mt-3 leading-relaxed max-w-2xl">Led design, prototyping, and assembly of multiple 2000+ part robots within 6-week build seasons. Independently developed 3/5 mechanisms in 2024, 4/7 in 2025, and 4/8 in 2026. Managed manufacturing and production from 2024 onward. Reduced team expenses 25%; secured SolidWorks and Xometry sponsorships. Primarily a low-resource environment - wood, reused parts, limited tooling - which meant getting faster at diagnosing failures, making tradeoffs under time pressure, and finding workable solutions with what was available.</p>
+          <div class="flex flex-wrap gap-2 mt-4"><span class="tag">Onshape</span><span class="tag">SolidWorks</span><span class="tag">FEA</span><span class="tag">Topology Opt.</span><span class="tag">Manufacturing Mgmt</span></div>
+        </div>
+      </div>
+
+      <div class="reveal d1 exp-row flex flex-col md:flex-row gap-6 md:gap-16 py-10 border-b border-outline-variant/10 group hover:bg-surface-container-low/40 rounded-2xl px-4 transition-all">
+        <div class="md:w-44 flex-shrink-0">
+          <div class="text-primary text-xs font-bold uppercase tracking-widest">Jul – Sept 2025</div>
+          <div class="text-on-surface-variant text-[10px] uppercase tracking-widest mt-1">Robard Bionics</div>
+        </div>
+        <div class="flex-grow">
+          <h3 class="text-2xl font-black text-on-surface font-['Plus_Jakarta_Sans'] group-hover:text-primary transition-colors">Prosthetics Design Intern</h3>
+          <p class="text-on-surface-variant text-sm mt-3 leading-relaxed max-w-2xl">Designed distal attachments and refined the aesthetic of both a pinky prosthetic and a lower limb prosthetic in SolidWorks. Shadowed client consultations - direct exposure to how engineering decisions affect amputee patients' daily lives.</p>
+          <div class="flex flex-wrap gap-2 mt-4"><span class="tag">SolidWorks</span><span class="tag">Medical Devices</span><span class="tag">Biomechanics</span></div>
+        </div>
+      </div>
+
+      <div class="reveal d2 exp-row flex flex-col md:flex-row gap-6 md:gap-16 py-10 border-b border-outline-variant/10 group hover:bg-surface-container-low/40 rounded-2xl px-4 transition-all">
+        <div class="md:w-44 flex-shrink-0">
+          <div class="text-primary text-xs font-bold uppercase tracking-widest">Jul – Aug 2024</div>
+          <div class="text-on-surface-variant text-[10px] uppercase tracking-widest mt-1">Kinetic CNC</div>
+        </div>
+        <div class="flex-grow">
+          <h3 class="text-2xl font-black text-on-surface font-['Plus_Jakarta_Sans'] group-hover:text-primary transition-colors">CNC Manufacturing Intern</h3>
+          <p class="text-on-surface-variant text-sm mt-3 leading-relaxed max-w-2xl">Operated 4-axis HAAS CNC machines on live commercial production runs. Machined 500+ parts. Designed SolidWorks fixtures, reverse-engineered proprietary part models, and built a 3D-printed sandblasting fixture eliminating manual masking.</p>
+          <div class="flex flex-wrap gap-2 mt-4"><span class="tag">4-Axis HAAS</span><span class="tag">GD&T</span><span class="tag">Reverse Engineering</span><span class="tag">SolidWorks</span></div>
+        </div>
+      </div>
+
+      <div class="reveal d1 exp-row flex flex-col md:flex-row gap-6 md:gap-16 py-10 border-b border-outline-variant/10 group hover:bg-surface-container-low/40 rounded-2xl px-4 transition-all">
+        <div class="md:w-44 flex-shrink-0">
+          <div class="text-primary text-xs font-bold uppercase tracking-widest">2025 – Present</div>
+          <div class="text-on-surface-variant text-[10px] uppercase tracking-widest mt-1">Jeremy Fielding</div>
+        </div>
+        <div class="flex-grow">
+          <h3 class="text-2xl font-black text-on-surface font-['Plus_Jakarta_Sans'] group-hover:text-primary transition-colors">Mechanical Design Consultant</h3>
+          <p class="text-on-surface-variant text-sm mt-3 leading-relaxed max-w-2xl">Commissioned by Jeremy Fielding (1M+ subscriber YouTube mechanical engineer) to design a custom aperture mechanism. Delivered professional-grade Fusion 360 CAD from brief to final deliverable on a client timeline.</p>
+          <div class="flex flex-wrap gap-2 mt-4"><span class="tag">Fusion 360</span><span class="tag">Mechanism Design</span><span class="tag">Client Work</span></div>
+        </div>
+      </div>
+
+      <div class="reveal d2 exp-row flex flex-col md:flex-row gap-6 md:gap-16 py-10 border-b border-outline-variant/10 group hover:bg-surface-container-low/40 rounded-2xl px-4 transition-all">
+        <div class="md:w-44 flex-shrink-0">
+          <div class="text-primary text-xs font-bold uppercase tracking-widest">Jul 2023 – Present</div>
+          <div class="text-on-surface-variant text-[10px] uppercase tracking-widest mt-1">FTC Mech-a-Mind</div>
+        </div>
+        <div class="flex-grow">
+          <h3 class="text-2xl font-black text-on-surface font-['Plus_Jakarta_Sans'] group-hover:text-primary transition-colors">Head Design Mentor</h3>
+          <p class="text-on-surface-variant text-sm mt-3 leading-relaxed max-w-2xl">Teaching 9+ students mechanism design, CAD fundamentals, and engineering reasoning. Team remains undefeated and ranked 7th in the region.</p>
+          <div class="flex flex-wrap gap-2 mt-4"><span class="tag">Mentorship</span><span class="tag">FTC</span><span class="tag">CAD</span></div>
+        </div>
+      </div>
+
+      <div class="reveal d3 exp-row flex flex-col md:flex-row gap-6 md:gap-16 py-10 group hover:bg-surface-container-low/40 rounded-2xl px-4 transition-all">
+        <div class="md:w-44 flex-shrink-0">
+          <div class="text-primary text-xs font-bold uppercase tracking-widest">Jan 2024 – Present</div>
+          <div class="text-on-surface-variant text-[10px] uppercase tracking-widest mt-1">EduEngineering</div>
+        </div>
+        <div class="flex-grow">
+          <h3 class="text-2xl font-black text-on-surface font-['Plus_Jakarta_Sans'] group-hover:text-primary transition-colors">Founder</h3>
+          <p class="text-on-surface-variant text-sm mt-3 leading-relaxed max-w-2xl">Founded a community problem-solving program that has impacted 1000+ students and faculty. Connects engineering education to real community challenges.</p>
+          <div class="flex flex-wrap gap-2 mt-4"><span class="tag">Founder</span><span class="tag">Education</span><span class="tag">Community Impact</span></div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ─── CERTIFICATIONS ─── -->
+  <section class="px-6 md:px-12 py-24 bg-surface-container-low/40">
+    <div class="max-w-screen-xl mx-auto">
+      <div class="reveal flex items-center gap-4 mb-12">
+        <span class="w-8 h-px bg-primary/40"></span>
+        <h2 class="text-[11px] text-primary font-bold uppercase tracking-[.2em]">Certifications &amp; Awards</h2>
+        <div class="flex-grow h-px bg-outline-variant/20"></div>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+        <div class="reveal gb bg-primary-container/10 border border-primary/20 rounded-2xl p-6 glow-hover">
+          <div class="material-symbols-outlined text-primary mb-3" style="font-variation-settings:'FILL' 1;">verified</div>
+          <div class="text-lg font-black text-on-surface font-['Plus_Jakarta_Sans']">CSWP</div>
+          <div class="text-xs text-on-surface-variant mt-1">SolidWorks Certified Professional</div>
+          <div class="text-[10px] text-primary/70 mt-3 uppercase tracking-wider">+ Weldments · Sheet Metal · Surfacing · Drawing Tools</div>
+        </div>
+        <div class="reveal d1 gb bg-surface-container rounded-2xl p-6 glow-hover">
+          <div class="material-symbols-outlined text-primary mb-3" style="font-variation-settings:'FILL' 1;">emoji_events</div>
+          <div class="text-lg font-black text-on-surface font-['Plus_Jakarta_Sans']">FRC Dean's List Finalist 2025</div>
+          <div class="text-xs text-on-surface-variant mt-1">Top 0.4% of 40,000+ elligible competitors globally</div>
+        </div>
+        <div class="reveal d2 gb bg-surface-container rounded-2xl p-6 glow-hover">
+          <div class="material-symbols-outlined text-primary mb-3" style="font-variation-settings:'FILL' 1;">military_tech</div>
+          <div class="text-lg font-black text-on-surface font-['Plus_Jakarta_Sans']">Dean's List Semifinalist 2024</div>
+          <div class="text-xs text-on-surface-variant mt-1">1 of 2 students nominated on 100+ student team · FRC</div>
+        </div>
+        <div class="reveal gb bg-surface-container rounded-2xl p-6 glow-hover">
+          <div class="material-symbols-outlined text-primary mb-3" style="font-variation-settings:'FILL' 1;">school</div>
+          <div class="text-lg font-black text-on-surface font-['Plus_Jakarta_Sans']">National Merit Finalist</div>
+          <div class="text-xs text-on-surface-variant mt-1">Top 1% nationally</div>
+        </div>
+        <div class="reveal d1 gb bg-surface-container rounded-2xl p-6 glow-hover">
+          <div class="material-symbols-outlined text-primary mb-3" style="font-variation-settings:'FILL' 1;">wb_sunny</div>
+          <div class="text-lg font-black text-on-surface font-['Plus_Jakarta_Sans']">Modeling the Future Semifinalist</div>
+          <div class="text-xs text-on-surface-variant mt-1">Analyzing Melting Permafrost in Alaskan communities</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  </div><!-- ╚══ /TAB: EXPERIENCE ══╝ -->
+
+  <!-- ╔══ TAB: CONTACT ══╗ -->
+  <div class="tab-panel" data-panel="contact">
+
+  <!-- ─── CONTACT ─── -->
+  <section id="contact" class="px-6 md:px-12 py-32 max-w-screen-xl mx-auto">
+    <div class="max-w-2xl mx-auto text-center">
+      <div class="reveal">
+        <span class="text-primary font-bold uppercase tracking-[.2em] text-[11px] cad-mark">Get in Touch</span>
+        <h2 class="reveal-wipe text-5xl md:text-6xl font-black mt-4 text-on-surface font-['Plus_Jakarta_Sans'] tracking-tighter leading-tight">What should we<br/><span class="grad-text">build next?</span></h2>
+        <p class="text-on-surface-variant text-lg mt-6 leading-relaxed">Internships, design projects, or just a good conversation - I'm interested.</p>
+      </div>
+      <div class="reveal d1 flex flex-col sm:flex-row gap-4 justify-center mt-12">
+        <a href="mailto:simeon.kim@yale.edu"
+           class="magnetic bg-primary-container text-white px-8 py-4 rounded-full font-bold font-['Plus_Jakarta_Sans'] text-sm tracking-wide transition-all hover:shadow-[0_0_40px_rgba(237,90,165,.45)] active:scale-95 flex items-center justify-center gap-2">
+          <span class="material-symbols-outlined text-[18px]">mail</span>
+          simeon.kim@yale.edu
+        </a>
+        <a href="Simeon Kim - Resume (17).pdf" target="_blank" rel="noopener"
+           class="magnetic bg-surface-container border border-outline-variant/30 text-on-surface px-8 py-4 rounded-full font-bold font-['Plus_Jakarta_Sans'] text-sm tracking-wide transition-all hover:bg-surface-container-high active:scale-95 flex items-center justify-center gap-2">
+          Resume ↗
+        </a>
+      </div>
+      <div class="reveal d2 flex items-center justify-center gap-8 mt-10">
+        <a href="https://linkedin.com/in/simeon-kim-115855277" target="_blank" rel="noopener" class="text-on-surface-variant hover:text-primary transition-colors flex items-center gap-2 text-sm">
+          <span class="material-symbols-outlined text-[18px]">link</span> LinkedIn
+        </a>
+        <div class="w-px h-4 bg-outline-variant/30"></div>
+        <a href="tel:6196538134" class="text-on-surface-variant hover:text-primary transition-colors flex items-center gap-2 text-sm">
+          <span class="material-symbols-outlined text-[18px]">phone</span> (619) 653-8134
+        </a>
+      </div>
+    </div>
+  </section>
+
+  </div><!-- ╚══ /TAB: CONTACT ══╝ -->
+
+  <!-- ─── FOOTER ─── -->
+  <footer class="border-t border-outline-variant/10 px-6 md:px-12 py-10">
+    <div class="max-w-screen-xl mx-auto flex flex-col md:flex-row justify-between items-center gap-4">
+      <div class="flex items-center gap-5">
+        <div class="text-primary font-black font-['Plus_Jakarta_Sans'] tracking-tighter text-lg">SK</div>
+        <div class="w-px h-4 bg-outline-variant/30 hidden md:block"></div>
+        <div class="local-time hidden md:inline-flex" aria-live="polite">
+          <span class="time-dot"></span>
+          <span id="local-time-text">&hellip;</span>
+        </div>
+      </div>
+      <div class="text-on-surface-variant text-xs">© 2026 Simeon Kim · Building Things That Work.</div>
+      <div class="flex gap-6 text-on-surface-variant text-xs">
+        <a href="mailto:simeon.kim@yale.edu" class="hover:text-primary transition-colors">Email</a>
+        <a href="https://linkedin.com/in/simeon-kim-115855277" target="_blank" rel="noopener" class="hover:text-primary transition-colors">LinkedIn</a>
+        <a href="Simeon Kim - Resume (17).pdf" target="_blank" rel="noopener" class="hover:text-primary transition-colors">Resume</a>
+      </div>
+    </div>
+  </footer>
+</main>
+
+<!-- Mobile bottom nav -->
+<nav class="xl:hidden fixed bottom-0 left-0 right-0 bg-surface-container-low/90 backdrop-blur-xl border-t border-outline-variant/20 z-50 flex justify-around py-3 px-4">
+  <button data-tab="about"      class="tab-btn mobile-tab flex flex-col items-center gap-1"><span class="material-symbols-outlined text-[22px]">person</span><span class="text-[9px] uppercase tracking-widest font-bold">About</span></button>
+  <button data-tab="work"       class="tab-btn mobile-tab flex flex-col items-center gap-1"><span class="material-symbols-outlined text-[22px]">grid_view</span><span class="text-[9px] uppercase tracking-widest font-bold">Work</span></button>
+  <button data-tab="experience" class="tab-btn mobile-tab flex flex-col items-center gap-1"><span class="material-symbols-outlined text-[22px]">work</span><span class="text-[9px] uppercase tracking-widest font-bold">Exp.</span></button>
+  <button data-tab="contact"    class="tab-btn mobile-tab flex flex-col items-center gap-1"><span class="material-symbols-outlined text-[22px]">mail</span><span class="text-[9px] uppercase tracking-widest font-bold">Contact</span></button>
+</nav>
+
+<!-- ══════════════ DETAIL PANEL ══════════════ -->
+<div id="detail-overlay" class="fixed inset-0 z-[200] flex justify-end opacity-0 pointer-events-none">
+  <div id="detail-scrim" class="absolute inset-0 bg-black/70 backdrop-blur-sm cursor-pointer"></div>
+  <div id="detail-panel" class="relative z-10 w-full max-w-2xl h-full bg-surface-container-low border-l border-outline-variant/20 overflow-y-auto translate-x-full flex flex-col">
+    <!-- sticky close -->
+    <div class="sticky top-0 z-20 flex justify-end px-4 pt-4 -mb-14 pointer-events-none">
+      <button id="dp-close" aria-label="Close project details" class="pointer-events-auto w-10 h-10 rounded-full bg-black/60 backdrop-blur-sm flex items-center justify-center text-white hover:text-primary transition-colors">
+        <span class="material-symbols-outlined text-[20px]">close</span>
+      </button>
+    </div>
+    <div id="dp-img" class="w-full h-96 bg-surface-container-high relative overflow-hidden flex-shrink-0"></div>
+    <div class="p-8 flex-grow">
+      <p id="dp-kicker" class="text-primary text-[10px] font-bold uppercase tracking-[.2em] mb-3"></p>
+      <h2 id="dp-title" class="font-['Plus_Jakarta_Sans'] font-black text-3xl text-on-surface tracking-tight leading-tight mb-4"></h2>
+      <div id="dp-tags" class="flex flex-wrap gap-2 mb-6"></div>
+      <p id="dp-desc" class="text-on-surface-variant text-sm leading-relaxed mb-8"></p>
+      <div class="mb-8">
+        <h3 class="text-[10px] text-primary font-bold uppercase tracking-[.2em] mb-1">Key Highlights</h3>
+        <ul id="dp-hl" class="divide-y divide-outline-variant/10"></ul>
+      </div>
+      <div id="dp-gal-wrap" class="hidden">
+        <h3 class="text-[10px] text-primary font-bold uppercase tracking-[.2em] mb-4">Gallery <span class="text-outline normal-case tracking-normal font-normal text-[9px] ml-2">- click any photo to expand</span></h3>
+        <div id="dp-gallery" class="grid grid-cols-1 sm:grid-cols-2 gap-4"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════ LIGHTBOX ══════════════ -->
+<div id="lightbox" class="fixed inset-0 z-[500] flex items-center justify-center opacity-0 pointer-events-none" style="background:rgba(0,0,0,.92);backdrop-filter:blur(12px);transition:opacity .25s ease;">
+  <button id="lb-close" aria-label="Close image viewer" class="absolute top-5 right-5 w-10 h-10 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center text-white transition-colors z-10">
+    <span class="material-symbols-outlined text-[20px]">close</span>
+  </button>
+  <button id="lb-prev" aria-label="Previous image" class="absolute left-4 md:left-8 w-12 h-12 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center text-white transition-colors z-10">
+    <span class="material-symbols-outlined text-[24px]">chevron_left</span>
+  </button>
+  <button id="lb-next" aria-label="Next image" class="absolute right-4 md:right-8 w-12 h-12 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center text-white transition-colors z-10">
+    <span class="material-symbols-outlined text-[24px]">chevron_right</span>
+  </button>
+  <div class="relative w-full max-w-5xl px-16 md:px-24 flex flex-col items-center gap-4">
+    <img id="lb-img" src="" alt="" class="max-h-[80vh] max-w-full object-contain rounded-xl shadow-2xl" style="transition:opacity .2s ease;"/>
+    <div id="lb-counter" class="text-white/50 text-xs tracking-widest uppercase font-bold"></div>
+    <!-- Thumbnail strip -->
+    <div id="lb-thumbs" class="flex gap-2 overflow-x-auto max-w-full pb-1 mt-1" style="scrollbar-width:thin;scrollbar-color:#353535 transparent;"></div>
+  </div>
+</div>
+
+
+<div id="philosophy-overlay" class="fixed inset-0 z-[300] flex justify-start opacity-0 pointer-events-none" style="transition:opacity .3s ease;">
+  <div id="philosophy-scrim" class="absolute inset-0 bg-black/70 backdrop-blur-sm cursor-pointer"></div>
+  <div id="philosophy-panel" class="relative z-10 w-full max-w-2xl h-full bg-surface-container-low border-r border-outline-variant/20 overflow-y-auto" style="transform:translateX(-100%);transition:transform .4s cubic-bezier(.22,1,.36,1);">
+    <div class="p-10">
+      <div class="flex items-start justify-between mb-12">
+        <div>
+          <p class="text-primary text-[10px] font-bold uppercase tracking-[.2em] mb-3">About Me</p>
+          <h2 class="font-['Plus_Jakarta_Sans'] font-black text-4xl text-on-surface tracking-tight leading-tight">Philosophy &amp;<br/><span class="text-primary">Who I Am</span></h2>
+        </div>
+        <button id="philosophy-close" aria-label="Close" class="text-on-surface-variant hover:text-primary transition-colors mt-1">
+          <span class="material-symbols-outlined text-[28px]">close</span>
+        </button>
+      </div>
+
+      <div class="bg-primary-container/20 border border-primary/20 rounded-2xl p-6 mb-10">
+        <div class="flex items-center gap-4">
+          <div class="w-12 h-12 rounded-xl bg-primary-container/40 flex items-center justify-center flex-shrink-0">
+            <span class="text-primary font-black text-sm font-['Plus_Jakarta_Sans']">Y'30</span>
+          </div>
+          <div>
+            <div class="text-primary font-bold text-sm font-['Plus_Jakarta_Sans']">Yale University · Class of 2030</div>
+            <div class="text-on-surface-variant text-xs mt-1">Incoming freshman. Looking to continue building at the intersection of mechanical engineering and real-world impact.</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="space-y-10">
+        <div class="border-l-2 border-primary pl-6">
+          <h3 class="text-on-surface font-bold font-['Plus_Jakarta_Sans'] text-lg mb-3">Why I Build</h3>
+          <p class="text-on-surface-variant text-sm leading-relaxed">Growing up as a pastor's kid, our home was filled with people whose lives looked nothing alike. Historians and mechanics. People who had just come to America and people who had never left. Listening to them taught me that before understanding a problem, I should understand the person carrying it. <br><br> For a long time I thought engineering was about becoming skilled. Then I watched an amputee smile because of a prosthetic I would have called ordinary. That changed the question I ask. Not, <em>Can I build this?</em> but, <em>Who becomes better because it exists?</em></p>
+        </div>
+        <div class="border-l-2 border-outline-variant/40 pl-6">
+          <h3 class="text-on-surface font-bold font-['Plus_Jakarta_Sans'] text-lg mb-3">How I Think</h3>
+          <p class="text-on-surface-variant text-sm leading-relaxed">I like questions that become more interesting the longer I sit with them. <br><br> When something isn't working, I instinctively begin turning it over in my head. I'll imagine it from different angles, challenge my own assumptions, and keep asking why until I understand what problem I'm actually trying to solve. <br><br> Sometimes that leads to a better design. Sometimes it leads somewhere completely different. The first problem I notice is rarely the real one. More often than not, the interesting question is underneath the obvious one.</p>
+        </div>
+        <div class="border-l-2 border-outline-variant/40 pl-6">
+          <h3 class="text-on-surface font-bold font-['Plus_Jakarta_Sans'] text-lg mb-3">What I'm Looking For</h3>
+          <p class="text-on-surface-variant text-sm leading-relaxed">I'm looking for people who enjoy difficult questions as much as difficult answers. <br><br> I want to build things that improve peope's lives, challenge my own assumptions, and leave every system, whether mechanical or human, a little better than I found it.</p>
+        </div>
+      </div>
+
+      <div class="mt-14 pt-10 border-t border-outline-variant/15">
+        <p class="text-on-surface-variant text-sm mb-5">Want to talk? I'm always up for a good conversation.</p>
+        <a href="mailto:simeon.kim@yale.edu"
+           class="inline-flex items-center gap-2 bg-primary-container text-white px-6 py-3 rounded-full font-bold font-['Plus_Jakarta_Sans'] text-sm tracking-wide transition-all hover:shadow-[0_0_24px_rgba(237,90,165,.35)]">
+          Get in touch <span class="material-symbols-outlined text-[16px]">east</span>
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════ SCRIPTS ══════════════ -->
+<script>
+// Cursor glow
+const glow = document.getElementById('cursor-glow');
+document.addEventListener('mousemove', e => {
+  glow.style.left = e.clientX + 'px';
+  glow.style.top  = e.clientY + 'px';
+  glow.style.opacity = '1';
+}, { passive: true });
+
+// Scroll progress bar
+const scrollBar = document.getElementById('scroll-bar');
+window.addEventListener('scroll', () => {
+  const pct = window.scrollY / (document.documentElement.scrollHeight - window.innerHeight) * 100;
+  scrollBar.style.width = pct + '%';
+}, { passive: true });
+
+// Ticker
+const tickerItems = [
+  'SolidWorks CSWP', 'FRC President', 'FEA Analysis', "Yale '30",
+  'Topology Optimization', '4-Axis CNC', "Dean's List Finalist",
+  'Prosthetics Design', 'GD&T', 'Onshape', 'Open Source',
+  'Jeremy Fielding Commission', '2000+ Part Robots', 'Reverse Engineering',
+];
+const tickerHTML = tickerItems.map(t =>
+  `<span class="inline-flex items-center gap-4 px-6 text-on-surface-variant text-sm font-['Plus_Jakarta_Sans'] font-medium"><span class="w-1.5 h-1.5 rounded-full bg-primary inline-block flex-shrink-0"></span>${t}</span>`
+).join('');
+document.querySelectorAll('.ticker-inner').forEach(el => el.innerHTML = tickerHTML);
+
+// Reveal on scroll
+const allReveal = document.querySelectorAll('.reveal, .reveal-r, .reveal-scale, .reveal-wipe');
+const revObs = new IntersectionObserver(entries => {
+  entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); revObs.unobserve(e.target); } });
+}, { threshold: 0.08, rootMargin: '0px 0px -30px 0px' });
+allReveal.forEach(el => revObs.observe(el));
+
+// Nav shadow + active
+const topnav = document.getElementById('topnav');
+const sections = document.querySelectorAll('section[id]');
+window.addEventListener('scroll', () => {
+  topnav.style.boxShadow = window.scrollY > 20 ? '0 1px 0 rgba(86,65,73,.25)' : '';
+  let cur = '';
+  sections.forEach(s => { if (window.scrollY >= s.offsetTop - 130) cur = s.id; });
+  document.querySelectorAll('.nav-lnk').forEach(a => {
+    const on = a.getAttribute('href') === '#' + cur;
+    a.classList.toggle('text-primary', on);
+    a.classList.toggle('text-on-surface-variant', !on);
+  });
+}, { passive: true });
+
+// Filter chips
+document.querySelectorAll('#filter-chips .chip').forEach(btn => {
+  btn.addEventListener('click', () => {
+    document.querySelectorAll('#filter-chips .chip').forEach(b => {
+      b.classList.remove('chip-active');
+      b.classList.add('bg-surface-container','text-on-surface-variant');
+    });
+    btn.classList.add('chip-active');
+    btn.classList.remove('bg-surface-container','text-on-surface-variant');
+    const f = btn.dataset.filter;
+    document.querySelectorAll('.proj-item').forEach(item => {
+      const show = f === 'all' || item.dataset.category === f;
+      item.style.transition = 'opacity .3s, transform .3s';
+      if (show) { item.style.opacity = '1'; item.style.transform = 'scale(1)'; item.style.display = ''; }
+      else { item.style.opacity = '0'; item.style.transform = 'scale(.97)'; setTimeout(() => { if (btn.dataset.filter !== 'all' && item.dataset.category !== btn.dataset.filter) item.style.display = 'none'; }, 300); }
+    });
+  });
+});
+
+// Detail panel
+const overlay = document.getElementById('detail-overlay');
+const panel   = document.getElementById('detail-panel');
+const scrim   = document.getElementById('detail-scrim');
+const dpImg   = document.getElementById('dp-img');
+
+function openDetail(el) {
+  let imgs=[], hls=[];
+  try { imgs = JSON.parse(el.dataset.imgs   || '[]'); } catch(e){}
+  try { hls  = JSON.parse(el.dataset.highlights || '[]'); } catch(e){}
+
+  document.getElementById('dp-kicker').textContent = el.dataset.kicker || '';
+  document.getElementById('dp-title').textContent  = el.dataset.title  || '';
+  document.getElementById('dp-desc').textContent   = el.dataset.desc   || '';
+
+  document.getElementById('dp-tags').innerHTML = (el.dataset.tags || '').split(',').map(t =>
+    `<span class="tag">${t.trim()}</span>`).join('');
+
+  document.getElementById('dp-hl').innerHTML = hls.map(h =>
+    `<li class="flex gap-3 items-baseline py-3.5 border-b border-outline-variant/10 text-sm text-on-surface-variant leading-relaxed"><span class="text-primary flex-shrink-0 text-xs">→</span>${h}</li>`).join('');
+
+  dpImg.innerHTML = imgs[0]
+    ? `<img src="${imgs[0]}" alt="${el.dataset.title}" class="w-full h-full object-cover brightness-75 cursor-zoom-in hover:brightness-90 transition-all" data-lb-index="0"/>`
+    : `<div class="w-full h-full no-photo flex items-center justify-center"><span class="text-[10px] uppercase tracking-widest text-on-surface-variant">No image available</span></div>`;
+
+  // Store current images for lightbox
+  dpImg.dataset.imgs = JSON.stringify(imgs);
+  if (imgs[0]) {
+    dpImg.querySelector('img').addEventListener('click', () => openLightbox(imgs, 0));
+  }
+
+  const gw = document.getElementById('dp-gal-wrap');
+  const ge = document.getElementById('dp-gallery');
+  const extra = imgs.slice(1);
+  if (extra.length) {
+    ge.innerHTML = extra.map((s, i) => `<div class="relative group/gimg cursor-zoom-in rounded-xl overflow-hidden" style="aspect-ratio:16/9;">
+      <img src="${s}" alt="" loading="lazy" class="w-full h-full object-cover brightness-75 group-hover/gimg:brightness-95 transition-all duration-300 group-hover/gimg:scale-105" data-lb-index="${i+1}"/>
+      <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover/gimg:opacity-100 transition-opacity">
+        <span class="material-symbols-outlined text-white text-[28px] drop-shadow-lg">zoom_in</span>
+      </div>
+    </div>`).join('');
+    ge.querySelectorAll('[data-lb-index]').forEach(img => {
+      img.closest('div').addEventListener('click', () => openLightbox(imgs, parseInt(img.dataset.lbIndex)));
+    });
+    gw.classList.remove('hidden');
+  } else { gw.classList.add('hidden'); }
+
+  overlay.classList.remove('opacity-0','pointer-events-none');
+  overlay.classList.add('opacity-100');
+  panel.classList.remove('translate-x-full');
+  document.body.style.overflow = 'hidden';
+  panel.scrollTop = 0;
+}
+
+function closeDetail() {
+  overlay.classList.add('opacity-0','pointer-events-none');
+  overlay.classList.remove('opacity-100');
+  panel.classList.add('translate-x-full');
+  // close lightbox too if open
+  lb.style.opacity = '0';
+  lb.style.pointerEvents = 'none';
+  document.body.style.overflow = '';
+}
+
+document.querySelectorAll('.open-detail').forEach(btn =>
+  btn.addEventListener('click', e => { e.stopPropagation(); openDetail(btn.closest('.proj-item')); }));
+document.querySelectorAll('.proj-item').forEach(el =>
+  el.addEventListener('click', () => openDetail(el)));
+scrim.addEventListener('click', closeDetail);
+document.getElementById('dp-close').addEventListener('click', closeDetail);
+
+// Philosophy panel
+const philoOv   = document.getElementById('philosophy-overlay');
+const philoPan  = document.getElementById('philosophy-panel');
+const philoScr  = document.getElementById('philosophy-scrim');
+function openPhilo()  { philoOv.style.opacity='1'; philoOv.style.pointerEvents='all'; philoPan.style.transform='translateX(0)'; document.body.style.overflow='hidden'; }
+function closePhilo() { philoOv.style.opacity='0'; philoOv.style.pointerEvents='none'; philoPan.style.transform='translateX(-100%)'; document.body.style.overflow=''; }
+['nav-philo-btn','about-philo-btn'].forEach(id => { const el=document.getElementById(id); if(el) el.addEventListener('click', openPhilo); });
+document.getElementById('philosophy-close').addEventListener('click', closePhilo);
+philoScr.addEventListener('click', closePhilo);
+document.addEventListener('keydown', e => { if(e.key==='Escape'){ closeDetail(); closePhilo(); } });
+
+// ── Lightbox ──────────────────────────────────
+const lb       = document.getElementById('lightbox');
+const lbImg    = document.getElementById('lb-img');
+const lbClose  = document.getElementById('lb-close');
+const lbPrev   = document.getElementById('lb-prev');
+const lbNext   = document.getElementById('lb-next');
+const lbCtr    = document.getElementById('lb-counter');
+const lbThumbs = document.getElementById('lb-thumbs');
+let lbImgs = [], lbIdx = 0;
+
+function openLightbox(imgs, idx) {
+  lbImgs = imgs; lbIdx = idx;
+  renderLightbox();
+  lb.style.opacity = '1';
+  lb.style.pointerEvents = 'all';
+  document.body.style.overflow = 'hidden';
+}
+
+function closeLightbox() {
+  lb.style.opacity = '0';
+  lb.style.pointerEvents = 'none';
+  if (!panel.classList.contains('translate-x-full')) return; // detail panel still open
+  document.body.style.overflow = '';
+}
+
+function renderLightbox() {
+  lbImg.style.opacity = '0';
+  setTimeout(() => {
+    lbImg.src = lbImgs[lbIdx];
+    lbImg.onload = () => { lbImg.style.opacity = '1'; };
+  }, 100);
+  lbCtr.textContent = `${lbIdx + 1} / ${lbImgs.length}`;
+  lbThumbs.innerHTML = lbImgs.map((s, i) => `<img src="${s}" alt="" class="h-12 w-20 object-cover rounded-lg cursor-pointer flex-shrink-0 transition-all ${i === lbIdx ? 'ring-2 ring-primary brightness-100' : 'brightness-50 hover:brightness-75'}" data-i="${i}"/>`).join('');
+  lbThumbs.querySelectorAll('img').forEach(t => t.addEventListener('click', () => { lbIdx = parseInt(t.dataset.i); renderLightbox(); }));
+  lbPrev.style.display = lbImgs.length < 2 ? 'none' : '';
+  lbNext.style.display = lbImgs.length < 2 ? 'none' : '';
+}
+
+lbClose.addEventListener('click', closeLightbox);
+lb.addEventListener('click', e => { if (e.target === lb) closeLightbox(); });
+lbPrev.addEventListener('click', e => { e.stopPropagation(); lbIdx = (lbIdx - 1 + lbImgs.length) % lbImgs.length; renderLightbox(); });
+lbNext.addEventListener('click', e => { e.stopPropagation(); lbIdx = (lbIdx + 1) % lbImgs.length; renderLightbox(); });
+document.addEventListener('keydown', e => {
+  if (lb.style.pointerEvents === 'all') {
+    if (e.key === 'ArrowLeft')  { lbIdx = (lbIdx - 1 + lbImgs.length) % lbImgs.length; renderLightbox(); }
+    if (e.key === 'ArrowRight') { lbIdx = (lbIdx + 1) % lbImgs.length; renderLightbox(); }
+    if (e.key === 'Escape')     { closeLightbox(); }
+  }
+});
+
+document.querySelectorAll('.tilt').forEach(card => {
+  card.addEventListener('mousemove', e => {
+    const r = card.getBoundingClientRect();
+    const x = (e.clientX - r.left) / r.width  - .5;
+    const y = (e.clientY - r.top)  / r.height - .5;
+    card.style.transform = `perspective(700px) rotateY(${x*7}deg) rotateX(${-y*7}deg) scale(1.02)`;
+  });
+  card.addEventListener('mouseleave', () => { card.style.transform = ''; });
+});
+
+// ═══════════════════════════════════════════════════════
+//                MICRO-INTERACTIONS
+// ═══════════════════════════════════════════════════════
+
+// ── Custom "VIEW" cursor on project images ─────────────
+const viewCursor = document.getElementById('cursor-view');
+const viewCount  = viewCursor.querySelector('.cv-count');
+
+// Smoothed (lerp) follow - the reticle glides toward the pointer for a
+// premium, "instrument settling on a target" feel rather than snapping.
+let vcTX = window.innerWidth / 2, vcTY = window.innerHeight / 2; // target
+let vcX  = vcTX, vcY = vcTY;                                     // eased
+document.addEventListener('mousemove', e => { vcTX = e.clientX; vcTY = e.clientY; }, { passive:true });
+(function vcLoop(){
+  vcX += (vcTX - vcX) * 0.32;
+  vcY += (vcTY - vcY) * 0.32;
+  viewCursor.style.transform = `translate(${vcX.toFixed(2)}px, ${vcY.toFixed(2)}px)`;
+  requestAnimationFrame(vcLoop);
+})();
+
+// Show the reticle + a live "frame count" readout (number of images in the
+// project's gallery) - a small, accurate engineering data-detail.
+function showViewCursor(wrap){
+  let n = 1;
+  const item = wrap.closest('[data-imgs]');
+  if (item){ try { n = JSON.parse(item.getAttribute('data-imgs')).length || 1; } catch(_){} }
+  viewCount.textContent = n > 1 ? (n + ' Frames') : 'View';
+  viewCursor.classList.add('show');
+  // lazily inject the scan-line, then re-trigger its sweep on each hover
+  if (!wrap.querySelector('.img-scan')){
+    const s = document.createElement('span'); s.className = 'img-scan'; wrap.appendChild(s);
+    s.addEventListener('animationend', () => wrap.classList.remove('scanning'));
+  }
+  wrap.classList.remove('scanning'); void wrap.offsetWidth; wrap.classList.add('scanning');
+}
+const hideViewCursor = () => viewCursor.classList.remove('show');
+
+document.querySelectorAll('.proj-img-wrap, .pc-img-wrap-2').forEach(wrap => {
+  wrap.addEventListener('mouseenter', () => showViewCursor(wrap));
+  wrap.addEventListener('mouseleave', hideViewCursor);
+});
+// Also enable on archive cards (same UX)
+document.querySelectorAll('#flagship-projects + section .proj-item, .arc-card').forEach(card => {
+  const img = card.querySelector('img');
+  if (!img) return;
+  const wrap = img.parentElement;
+  if (!wrap.classList.contains('pc-img-wrap-2') && !wrap.classList.contains('proj-img-wrap')) {
+    wrap.classList.add('pc-img-wrap-2');
+    wrap.addEventListener('mouseenter', () => showViewCursor(wrap));
+    wrap.addEventListener('mouseleave', hideViewCursor);
+  }
+});
+// Hide view cursor when overlays open (defensive)
+['detail-overlay','philosophy-overlay','lightbox'].forEach(id => {
+  const el = document.getElementById(id); if (!el) return;
+  new MutationObserver(() => {
+    if (el.style.pointerEvents === 'all' || (el.classList && el.classList.contains('opacity-100')))
+      viewCursor.classList.remove('show');
+  }).observe(el, { attributes:true, attributeFilter:['style','class'] });
+});
+
+// ── Project image SPOTLIGHT (cursor-following pink glow) ──
+document.querySelectorAll('.proj-img-wrap, .pc-img-wrap-2').forEach(wrap => {
+  if (wrap.dataset.spotlit) return;
+  wrap.dataset.spotlit = '1';
+  wrap.addEventListener('mousemove', e => {
+    const r = wrap.getBoundingClientRect();
+    const x = ((e.clientX - r.left) / r.width)  * 100;
+    const y = ((e.clientY - r.top)  / r.height) * 100;
+    wrap.style.setProperty('--mx', x + '%');
+    wrap.style.setProperty('--my', y + '%');
+  });
+});
+
+// ── Hero photo PARALLAX (subtle mouse-driven shift) ─────
+const photoCard = document.getElementById('hero-photo-card');
+if (photoCard) {
+  let ppRaf = null, ppX = 0, ppY = 0;
+  document.addEventListener('mousemove', e => {
+    ppX = (e.clientX / window.innerWidth  - 0.5);
+    ppY = (e.clientY / window.innerHeight - 0.5);
+    if (!ppRaf) {
+      ppRaf = requestAnimationFrame(() => {
+        photoCard.style.transform = `translate(${ppX * -10}px, ${ppY * -10}px)`;
+        ppRaf = null;
+      });
+    }
+  }, { passive: true });
+}
+
+// ── Magnetic buttons ───────────────────────────────────
+document.querySelectorAll('.magnetic').forEach(el => {
+  el.addEventListener('mousemove', e => {
+    const r = el.getBoundingClientRect();
+    const x = e.clientX - (r.left + r.width / 2);
+    const y = e.clientY - (r.top + r.height / 2);
+    el.style.transform = `translate(${x * 0.18}px, ${y * 0.28}px)`;
+  });
+  el.addEventListener('mouseleave', () => { el.style.transform = ''; });
+});
+
+// ── Number count-up on stats ───────────────────────────
+function animateCount(el) {
+  if (el.dataset.counted) return;
+  const text = (el.dataset.original || el.textContent).trim();
+  el.dataset.original = text;
+  el.dataset.counted = '1';
+  const m = text.match(/^([+-]?[\d,]*\.?\d+)(.*)$/);
+  if (!m) return;
+  const target = parseFloat(m[1].replace(/,/g, ''));
+  const suffix = m[2];
+  const decimals = (m[1].split('.')[1] || '').length;
+  const duration = 1200;
+  const start = performance.now();
+  function step(now) {
+    const t = Math.min((now - start) / duration, 1);
+    const eased = 1 - Math.pow(1 - t, 3);
+    const v = (target * eased).toFixed(decimals);
+    el.textContent = v + suffix;
+    if (t < 1) requestAnimationFrame(step);
+    else el.textContent = text; // restore exact original
+  }
+  el.textContent = '0' + (decimals ? '.' + '0'.repeat(decimals) : '') + suffix;
+  requestAnimationFrame(step);
+}
+const countObs = new IntersectionObserver(entries => {
+  entries.forEach(en => {
+    if (en.isIntersecting) { animateCount(en.target); countObs.unobserve(en.target); }
+  });
+}, { threshold: 0.6 });
+document.querySelectorAll('[data-count]').forEach(el => countObs.observe(el));
+
+// ── Hero name scramble (run once on load) ──────────────
+const SCRAMBLE_CHARS = '!<>-_\\/[]{}=+*^?#________';
+function scramble(el, duration = 1000) {
+  const final = el.textContent;
+  const len = final.length;
+  let frame = 0;
+  const totalFrames = Math.floor(duration / 38);
+  el.style.minWidth = el.offsetWidth + 'px'; // prevent reflow
+  const interval = setInterval(() => {
+    let out = '';
+    const progress = frame / totalFrames;
+    for (let i = 0; i < len; i++) {
+      const reveal = i < progress * len * 1.25;
+      if (final[i] === ' ' || final[i] === '\n' || reveal) out += final[i];
+      else out += SCRAMBLE_CHARS[Math.floor(Math.random() * SCRAMBLE_CHARS.length)];
+    }
+    el.textContent = out;
+    if (++frame >= totalFrames) {
+      clearInterval(interval);
+      el.textContent = final;
+      el.style.minWidth = '';
+    }
+  }, 38);
+}
+window.addEventListener('load', () => {
+  setTimeout(() => {
+    document.querySelectorAll('[data-scramble]').forEach((el, i) => {
+      setTimeout(() => scramble(el, 950), i * 180);
+    });
+  }, 250);
+});
+
+// ── Live local time (shows in footer) ──────────────────
+function updateClock() {
+  const t = document.getElementById('local-time-text');
+  if (!t) return;
+  const d = new Date();
+  const hh = String(d.getHours()).padStart(2, '0');
+  const mm = String(d.getMinutes()).padStart(2, '0');
+  const tzMatch = d.toLocaleTimeString('en-US', { timeZoneName: 'short' }).match(/[A-Z]{2,5}$/);
+  const tz = tzMatch ? tzMatch[0] : '';
+  t.textContent = `${hh}:${mm} ${tz} · LIVE`;
+}
+updateClock();
+setInterval(updateClock, 30000); // every 30s is plenty
+
+// ── Konami easter egg ──────────────────────────────────
+const KONAMI = ['arrowup','arrowup','arrowdown','arrowdown','arrowleft','arrowright','arrowleft','arrowright','b','a'];
+let kIdx = 0;
+const eeToast = document.getElementById('ee-toast');
+document.addEventListener('keydown', e => {
+  const key = e.key.toLowerCase();
+  if (key === KONAMI[kIdx]) {
+    kIdx++;
+    if (kIdx === KONAMI.length) {
+      kIdx = 0;
+      const on = document.body.classList.toggle('rainbow-mode');
+      eeToast.textContent = on ? '✦ Rainbow mode unlocked' : '◇ Default mode';
+      eeToast.classList.add('show');
+      setTimeout(() => eeToast.classList.remove('show'), 2200);
+    }
+  } else {
+    kIdx = (key === KONAMI[0]) ? 1 : 0;
+  }
+});
+
+// ── Tab navigation ─────────────────────────────────────
+const TABS = ['about','work','experience','contact'];
+function setTab(name, fromUser = true) {
+  if (!TABS.includes(name)) name = 'about';
+  // Compute slide direction based on tab order
+  const oldActive = document.querySelector('.tab-panel.active');
+  const oldName = oldActive?.dataset.panel;
+  const oldIdx = TABS.indexOf(oldName);
+  const newIdx = TABS.indexOf(name);
+  const direction = (oldIdx >= 0 && newIdx !== oldIdx) ? (newIdx > oldIdx ? 1 : -1) : 0;
+  const newPanel = document.querySelector(`.tab-panel[data-panel="${name}"]`);
+  if (newPanel) newPanel.style.setProperty('--slide-from', (direction * 32) + 'px');
+  document.querySelectorAll('.tab-panel').forEach(p => {
+    p.classList.toggle('active', p.dataset.panel === name);
+  });
+  document.querySelectorAll('.tab-btn').forEach(b => {
+    b.classList.toggle('active', b.dataset.tab === name);
+  });
+  if (fromUser) {
+    history.replaceState(null, '', '#' + name);
+    window.scrollTo({ top: 0, behavior: 'instant' in window ? 'instant' : 'auto' });
+  }
+  // Re-trigger reveal animations for elements now in view
+  requestAnimationFrame(() => {
+    const active = document.querySelector('.tab-panel.active');
+    if (!active) return;
+    active.querySelectorAll('.reveal:not(.visible), .reveal-r:not(.visible), .reveal-scale:not(.visible), .reveal-wipe:not(.visible)').forEach(el => {
+      const r = el.getBoundingClientRect();
+      if (r.top < window.innerHeight && r.bottom > 0) el.classList.add('visible');
+    });
+    // Count-up for stats now visible (IO may miss display:none → block transitions)
+    active.querySelectorAll('[data-count]:not([data-counted])').forEach(el => {
+      const r = el.getBoundingClientRect();
+      if (r.top < window.innerHeight * 0.95 && r.bottom > 0) animateCount(el);
+    });
+  });
+}
+document.querySelectorAll('.tab-btn').forEach(btn => {
+  btn.addEventListener('click', () => setTab(btn.dataset.tab));
+});
+// SK logo also goes home
+const logoBtn = document.getElementById('logo-btn');
+if (logoBtn) logoBtn.addEventListener('click', () => setTab('about'));
+// Hash-based deep linking
+window.addEventListener('hashchange', () => {
+  setTab((location.hash || '#about').slice(1), false);
+});
+// Init from hash, default to about
+setTab((location.hash || '#about').slice(1), false);
+
+// Make all in-page #anchors switch tab + scroll instead of just jumping
+document.querySelectorAll('a[href^="#"]').forEach(a => {
+  const href = a.getAttribute('href');
+  if (!href || href === '#') return;
+  const id = href.slice(1);
+  // Map old anchor IDs to tab names
+  const anchorToTab = { 'hero':'about', 'identity':'about', 'projects':'work', 'experience':'experience', 'contact':'contact' };
+  if (anchorToTab[id]) {
+    a.addEventListener('click', e => {
+      e.preventDefault();
+      setTab(anchorToTab[id]);
+    });
+  }
+});
+</script>
+</body>
+</html>
