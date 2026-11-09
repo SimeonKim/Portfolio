@@ -357,8 +357,9 @@ tailwind.config = {
     position: relative;
     overflow: hidden;
     border-radius: 10px;
-    background: #171714;
-    border: 1px solid rgba(74,69,60,.4);
+    width: 100%; padding: 0; display: block; text-align: left; cursor: zoom-in;
+    background: var(--surface-container);
+    border: 1px solid rgba(111,94,72,.22);
   }
   .photo-cell img {
     display: block; width: 100%; height: auto;
@@ -400,8 +401,8 @@ tailwind.config = {
       <button data-tab="about"      class="tab-btn px-3.5 py-1.5 rounded-full font-medium tracking-wide transition-all">About</button>
       <button data-tab="work"       class="tab-btn px-3.5 py-1.5 rounded-full font-medium tracking-wide transition-all">Work</button>
       <button data-tab="experience" class="tab-btn px-3.5 py-1.5 rounded-full font-medium tracking-wide transition-all">Experience</button>
-      <button data-tab="portfolio"  class="tab-btn px-3.5 py-1.5 rounded-full font-medium tracking-wide transition-all">Portfolio</button>
-      <button data-tab="contact"    class="tab-btn px-3.5 py-1.5 rounded-full font-medium tracking-wide transition-all">Contact</button>
+      <button data-tab="photos" class="tab-btn px-3.5 py-1.5 rounded-full font-medium tracking-wide transition-all">Photos</button>
+<button data-tab="contact"    class="tab-btn px-3.5 py-1.5 rounded-full font-medium tracking-wide transition-all">Contact</button>
     </div>
     <a href="https://github.com/SimeonKim/Portfolio/blob/main/Simeon%20Kim%20-%20Resume%20(17).pdf" target="_blank" rel="noopener"
        class="bg-primary-container text-white px-5 py-2 rounded-full text-sm font-bold font-['Syne'] transition-all hover:shadow-[0_0_20px_rgba(176,109,58,.4)] active:scale-95">
@@ -554,9 +555,9 @@ tailwind.config = {
         data-title="FRC 2026 Robot - Reefscape"
         data-kicker="FRC Robotics · 2026 · Won First Competition Since 2018"
         data-tags="FRC,Onshape,SolidWorks,FEA,Topology Optimization,Fabrication,Turret"
-        data-desc="Our most complete robot and strongest result - first competition win since 2018, second in team history. I designed 4 of 8 core mechanisms, including our first turreted shooter and second-generation elevator, and led manufacturing and integration across the team. This season I focused heavily on electrical and system-level design - after previous failures - which resulted in near-zero electrical issues throughout competition. I also expanded into metal manufacturing, including sheet metal design and bending, which improved part consistency compared to previous seasons."
-        data-highlights='["First competition win since 2018 - only the second win in team history","Designed 4/8 mechanisms: first turreted shooter, second-generation elevator, and more","Prioritized electrical system design - eliminated recurring failures from prior seasons","Led full manufacturing, assembly, and subsystem integration across the build season","Expanded into sheet metal design and bending - improved part consistency over prior seasons"]'
-        data-imgs='["images/frc2026-robot.webp","images/frc2026-real.webp","images/frc2026-competition.webp","images/frc2026-intake.webp","images/frc2026-elevator.jpg","images/frc2026-coral.jpg","images/frc2026-chassis.jpg","images/frc2026-climber.jpg"]'>
+        data-desc="Our 2026 robot won its first competition since 2018, only the second competition win in team history. I designed four of its eight mechanisms, including the team’s first turreted shooter and a second-generation elevator, and took on manufacturing and subsystem integration across the build.&#10;&#10;Earlier seasons had shown me how much time electrical problems and awkward repairs could take away from the rest of the team’s work. I paid more attention to electrical placement, labeling, and access. We had one electrical issue during the season. I also worked more with sheet metal design and bending, which gave us more consistent parts than our earlier approaches. The turret cable route still restricted rotation to about 270 degrees, a limit I would address in another iteration."
+        data-process="[{&quot;title&quot;:&quot;Four mechanisms, built into one robot&quot;,&quot;text&quot;:&quot;I designed four of the eight core mechanisms. My work included the team’s first turreted shooter and a second-generation elevator, along with manufacturing and subsystem integration. On a competition robot, those pieces have to fit around the electrical system, controls, and the people who need to assemble and repair it, so I treated integration as part of the design work.&quot;},{&quot;title&quot;:&quot;Electrical access and reliability&quot;,&quot;text&quot;:&quot;Earlier seasons had recurring electrical failures, so I paid more attention to where electrical components sat, how they were labeled, and whether the team could reach them during service. That change did not make the system perfect: we still had one electrical issue. It did make the robot easier to troubleshoot and reduced the kind of repeated problems that had shaped my approach the year before.&quot;},{&quot;title&quot;:&quot;The turret cable limit&quot;,&quot;text&quot;:&quot;Routing power and signals through a rotating turret created a hard packaging constraint. The cable path limited rotation to about 270 degrees. We accepted that limit for this version, and it is one of the first things I would revisit in a new iteration. It is a good example of how a subsystem can work as designed and still impose a system-level cost.&quot;}]"
+          data-imgs='["images/frc2026-robot.webp","images/frc2026-real.webp","images/frc2026-competition.webp","images/frc2026-intake.webp","images/frc2026-elevator.jpg","images/frc2026-coral.jpg","images/frc2026-chassis.jpg","images/frc2026-climber.jpg"]'>
         <div class="w-full lg:w-1/2 aspect-video rounded-2xl overflow-hidden bg-surface-container group cursor-pointer relative tilt gb proj-img-wrap">
           <img loading="lazy" decoding="async" src="images/frc2026-competition.webp" alt="FRC 2026" class="proj-img w-full h-full object-cover brightness-90"/>
           <div class="absolute inset-0 bg-gradient-to-t from-background/70 to-transparent"></div>
@@ -569,7 +570,7 @@ tailwind.config = {
         <div class="w-full lg:w-1/2">
           <span class="text-on-surface-variant font-['Syne'] text-sm tracking-wider">01 / FRC ROBOTICS</span>
           <h3 class="text-3xl md:text-4xl font-black text-on-surface mt-3 mb-5 tracking-tight font-['Syne']">FRC 2026 Robot</h3>
-          <p class="text-on-surface-variant leading-relaxed text-base mb-6">First competition win since 2018 - second in team history. Designed 4/8 mechanisms including our first turreted shooter and second-gen elevator. Led manufacturing and integration, and eliminated recurring electrical failures through intentional system-level design.</p>
+          <p class="text-on-surface-variant leading-relaxed text-base mb-6">Our 2026 robot won its first competition since 2018, only the second competition win in team history. I designed four of the eight mechanisms, including our first turreted shooter and a second-generation elevator, and led manufacturing and integration. We had one electrical issue during the season, and the turret cable route still limited rotation to about 270 degrees.</p>
           <div class="flex gap-6 mb-8">
             <div><div class="text-2xl font-black text-primary font-['Syne']" data-count>4/8</div><div class="text-[10px] uppercase tracking-widest text-on-surface-variant mt-1">Mechanisms</div></div>
             <div class="w-px bg-outline-variant/30"></div>
@@ -588,9 +589,9 @@ tailwind.config = {
         data-title="FRC 2025 Robot"
         data-kicker="FRC Robotics · Dean's List Season"
         data-tags="FRC,Onshape,SolidWorks,FEA,Leadership"
-        data-desc="A transition from reactive building to more structured design - with clear gaps. I designed 4 of 7 mechanisms, including the team's first two-stage elevator using a cascading cable system. The design choice simplified packaging and assembly, but introduced challenges in tensioning and consistency that I had to learn to manage. I also designed the swerve drivetrain, hopper, and arm, while leading manufacturing. This was my first time working closely with controls - particularly PID and basic feedforward - as we struggled to stabilize arm motion. One of the biggest takeaways was what I didn't do well: I did not invest enough in electrical system design. That showed up as recurring failures and inconsistent performance, which directly shaped how I approached the following year."
-        data-highlights='["FRC Dean&#39;s List Finalist 2025 - top 0.2% of 90,000+ participants globally","Designed 4/7 mechanisms: first two-stage cascading cable elevator, swerve drivetrain, hopper, and arm","Implemented cascading cable elevator system - learned to manage tensioning and consistency tradeoffs", "Identified electrical system design as a major weakness - directly shaped the 2026 approach","Developed deeper understanding of how mechanical and electrical reliability are inseparable"]'
-        data-imgs='["images/frc2025-render.webp","images/frc2025-competition.webp", "images/frc2025-cad.webp","images/frc2025-elevator.webp"]'>
+        data-desc="In 2025 I designed four of the robot’s seven mechanisms: the swerve drivetrain, hopper, arm, and the team’s first two-stage cascading cable elevator. I also led manufacturing. The elevator made for a compact layout, but I underestimated how much attention cable retention, tensioning, and replacement access would need once the robot was being used hard.&#10;&#10;This was also my first season working closely with controls. We were trying to stabilize the arm with PID and basic feedforward, but mechanical and controls integration happened late. I also did not give the electrical layout enough attention. The recurring failures and difficult service access were frustrating, but they gave me concrete problems to address in 2026 instead of vague goals like “make it more reliable.”"
+        data-process="[{&quot;title&quot;:&quot;Why I chose the cascading elevator&quot;,&quot;text&quot;:&quot;I designed an off-center, two-stage elevator driven by a cascading cable. The arrangement helped package the mechanism and kept the assembly straightforward, and it was a new architecture for our team. The choice also made cable routing and tensioning especially important; I had to learn that a compact design is only useful if it stays predictable after repeated use.&quot;},{&quot;title&quot;:&quot;Where the design caused trouble&quot;,&quot;text&quot;:&quot;During use, cables could jump off the lower pulleys. When that happened, replacing them was difficult because the surrounding structure did not leave enough service access. The electrical system sat beneath the elevator, which compounded the problem. I had designed the pieces, but I had not made maintenance easy enough for the people working on the whole robot.&quot;},{&quot;title&quot;:&quot;Mechanical and controls integration&quot;,&quot;text&quot;:&quot;I worked with PID and basic feedforward while we tried to settle the arm motion. We began that controls work late, so mechanical changes and control tuning were competing for time. I also left electrical organization underdeveloped, and we saw recurring failures. Those were not separate mistakes: they showed me that wiring access, cable replacement, and controls requirements need to be considered alongside mechanism geometry.&quot;}]"
+          data-imgs='["images/frc2025-render.webp","images/frc2025-competition.webp", "images/frc2025-cad.webp","images/frc2025-elevator.webp"]'>
         <div class="w-full lg:w-1/2 aspect-video rounded-2xl overflow-hidden bg-surface-container group cursor-pointer relative tilt gb proj-img-wrap">
           <img loading="lazy" decoding="async" src="images/frc2025-competition.webp" alt="FRC 2025" class="proj-img w-full h-full object-cover brightness-90"/>
           <div class="absolute inset-0 bg-gradient-to-t from-background/70 to-transparent"></div>
@@ -602,7 +603,7 @@ tailwind.config = {
         <div class="w-full lg:w-1/2">
           <span class="text-on-surface-variant font-['Syne'] text-sm tracking-wider">02 / FRC ROBOTICS</span>
           <h3 class="text-3xl md:text-4xl font-black text-on-surface mt-3 mb-5 tracking-tight font-['Syne']">FRC 2025 Robot</h3>
-          <p class="text-on-surface-variant leading-relaxed text-base mb-6">A step toward more structured design - with honest gaps. Designed the team's first two-stage cascading cable elevator, swerve drivetrain, hopper, and arm. The season that revealed electrical system design as a critical weakness, reshaping the next year's approach.</p>
+          <p class="text-on-surface-variant leading-relaxed text-base mb-6">I designed four of the team’s seven mechanisms in 2025, including the off-center two-stage cable elevator, swerve drivetrain, hopper, and arm. Cable retention and service access caused trouble, and we began controls integration late. I also underinvested in electrical design; the failures we saw shaped the way I approached the 2026 robot.</p>
           <div class="flex gap-6 mb-8">
             <div><div class="text-2xl font-black text-primary font-['Syne']" data-count>4/7</div><div class="text-[10px] uppercase tracking-widest text-on-surface-variant mt-1">Mechanisms</div></div>
             <div class="w-px bg-outline-variant/30"></div>
@@ -619,9 +620,9 @@ tailwind.config = {
         data-title="FRC 2024 Robot"
         data-kicker="FRC Robotics · Turnaround Season"
         data-tags="FRC,SolidWorks,4-Bar Linkage,Intake,Shooter,Cost Management,Fabrication"
-        data-desc="A reset in design approach - and where most of the fundamentals came from. I developed the intake as a 4-bar linkage by working through geometry first, using sketches (both by hand and in CAD) to validate motion before building. That led to a dual-function intake/indexer, reducing part count and simplifying the system. I handled manufacturing for both the intake and shooter. Mid-season, the intake failed repeatedly because it was only driven from one side, causing uneven loading and twisting across the structure. Fixing it required redesigning to drive both sides - introducing me to load distribution and why symmetric power transmission matters. This was also my first time using FEA and topology optimization to remove unnecessary material from structural plates. The shooter was prototyped physically before finalizing in CAD, and both systems were designed to be modular for fast iteration."
-        data-highlights='["Best in-person performance since 2019 - 2nd-best overall in 16 years","Geometry-first approach: worked out 4-bar linkage kinematics by hand before touching CAD","Dual-function intake/indexer: one mechanism doing two jobs - reduced part count significantly","Diagnosed and fixed asymmetric drive failure mid-season: redesigned to drive both sides","First use of FEA and topology optimization on structural plates to minimize weight","Coordinated external CNC manufacturing - sent part drawings to local shop for key components","FRC Dean&#39;s List Semifinalist 2024 - top 2% globally · 25% cost reduction"]'
-        data-imgs='["images/frc2024-competition.jpg", "images/frc2024-competitionhang.webp", "images/frc2024-intake-assembled.jpg", "images/frc2024-intake-front.jpg", "images/frc2024-linkage.jpg", "images/frc2024-real.jpg", "images/frc2024-shootergood.webp"]'>
+        data-desc="The 2024 robot is where I started working through mechanism geometry before committing to a build. I sketched and modeled a four-bar intake, checking how it moved, then combined intake and indexing into one mechanism. That kept the system simpler, but the first version was driven from only one side and twisted under load.&#10;&#10;I helped design three of the team’s five mechanisms and handled manufacturing for the intake and shooter. After the intake kept failing, I added a motor on the opposite side to balance the drive. A teammate developed the initial shooter design; I led physical testing and evaluation. We found that vibration and mechanical play affected accuracy, so the shooter needed to be treated as a moving assembly rather than just a CAD model. The robot placed fourth of 51 teams, our second-best result in 16 years, and stayed in service through multiple collisions."
+        data-process="[{&quot;title&quot;:&quot;Sketching the intake motion first&quot;,&quot;text&quot;:&quot;I used hand sketches and CAD to work through the four-bar geometry and check the motion before building. Combining the intake and indexer reduced the number of separate mechanisms and simplified the system. I also used FEA and topology optimization for the first time on structural plates, learning how to remove material while keeping the parts suited to their loads.&quot;},{&quot;title&quot;:&quot;A one-sided drive was not enough&quot;,&quot;text&quot;:&quot;The first intake was powered from one side. Under load, that uneven drive twisted the structure and caused repeated failures. I revised it to add a motor on the opposite side, which balanced the force across the mechanism. That change came from watching the actual assembly fail; the linkage geometry alone had not revealed the problem.&quot;},{&quot;title&quot;:&quot;Testing the shooter as a physical system&quot;,&quot;text&quot;:&quot;A teammate created the initial shooter design, and I led prototype testing and evaluation. Testing showed that vibration and mechanical play affected accuracy. We needed to pay attention to how the assembled parts moved together, not only whether the CAD geometry looked right. The robot placed fourth out of 51 teams and survived several collisions during the season.&quot;}]"
+          data-imgs='["images/frc2024-competition.jpg", "images/frc2024-competitionhang.webp", "images/frc2024-intake-assembled.jpg", "images/frc2024-intake-front.jpg", "images/frc2024-linkage.jpg", "images/frc2024-real.jpg", "images/frc2024-shootergood.webp"]'>
         <div class="w-full lg:w-1/2 aspect-video rounded-2xl overflow-hidden bg-surface-container group cursor-pointer relative tilt gb proj-img-wrap">
           <img loading="lazy" decoding="async" src="images/frc2024-competition.jpg" alt="FRC 2024" class="proj-img w-full h-full object-cover brightness-90"/>
           <div class="absolute inset-0 bg-gradient-to-t from-background/70 to-transparent"></div>
@@ -630,7 +631,7 @@ tailwind.config = {
         <div class="w-full lg:w-1/2">
           <span class="text-on-surface-variant font-['Syne'] text-sm tracking-wider">03 / FRC ROBOTICS</span>
           <h3 class="text-3xl md:text-4xl font-black text-on-surface mt-3 mb-5 tracking-tight font-['Syne']">FRC 2024 Robot</h3>
-          <p class="text-on-surface-variant leading-relaxed text-base mb-6">The season fundamentals were built. Geometry-first 4-bar linkage intake that doubled as an indexer. Mid-season failure diagnosis led to a full structural redesign. First use of FEA, topology optimization, and external CNC coordination.</p>
+          <p class="text-on-surface-variant leading-relaxed text-base mb-6">I worked out the four-bar intake motion in sketches and CAD, then combined intake and indexing in one mechanism. When the single-sided drive twisted the structure, I added a motor on the opposite side. I also handled manufacturing for the intake and shooter, and led physical testing of a teammate’s shooter design.</p>
           <div class="flex gap-6 mb-8">
             <div><div class="text-2xl font-black text-primary font-['Syne']" data-count>3/5</div><div class="text-[10px] uppercase tracking-widest text-on-surface-variant mt-1">Mechanisms</div></div>
             <div class="w-px bg-outline-variant/30"></div>
@@ -660,72 +661,82 @@ tailwind.config = {
           data-title="CNC Manufacturing - Kinetic CNC"
           data-kicker="Manufacturing Internship · Summer 2024"
           data-tags="CNC,4-Axis HAAS,SolidWorks,GD&T,Fixtures,Reverse Engineering,3D Printing"
-          data-desc="A summer internship running commercial production on 4-axis HAAS CNC machines with three distinct design projects. (1) Reverse Engineering: Kinetic CNC acquired a company that wouldn't share part models. I reverse-engineered the missing part from limited physical information - featuring a Loft and multiple angled extrudes, making it surprisingly difficult to model. (2) 4-Axis Fixture: Designed a modular fixture in SolidWorks for the HAAS that uses clamping action from toe tabs on offset planes to hold commercially sold razor heads - enabling features that would be otherwise unrealistic. (3) Sandblasting Fixture: Solved a tedious masking problem by designing a 3D-printable compliant snap-in fixture that exposes only the center handle region for sandblasting, protecting the rest of the part."
-          data-highlights='["Operated 4-axis HAAS CNC machines on live commercial production runs - hundreds of parts","Reverse engineered missing part model from physical sample using Loft and angled extrudes","Designed modular 4-axis fixture with toe-tab clamping for razor head production","Designed 3D-printable sandblasting fixture - eliminated tedious manual masking process","Gained hands-on GD&T, machine maintenance, and production quality oversight"]'
+          data-desc="At Kinetic CNC, I was not only drawing parts for a portfolio project; I was working around live commercial production and the constraints of machines, operators, and repeatable setups. I operated four-axis HAAS machines and machined more than 500 parts. Alongside production, I designed fixtures and reverse-engineered a part for which the shop had no CAD model.&#10;&#10;The three design problems were different. I reconstructed a missing model from a physical sample, designed a modular fixture for razor-head production using toe tabs on offset planes, and made a snap-in 3D-printed fixture for sandblasting. Each one started with a practical obstacle on the shop floor. I had to make the model understandable to the person setting up the machine and useful in the actual process, not just visually tidy in SolidWorks."
+          data-process="[{&quot;title&quot;:&quot;Rebuilding a part from the sample&quot;,&quot;text&quot;:&quot;After the company that made a part was acquired, the shop could not get the original model. I measured the physical sample with calipers and rebuilt it in SolidWorks. The shape required a loft and several angled extrusions, so I had to use the measurements and the part’s transitions to infer the geometry. That gave the shop a usable model without access to the original CAD.&quot;},{&quot;title&quot;:&quot;Holding razor heads on the fourth axis&quot;,&quot;text&quot;:&quot;For a four-axis HAAS operation, I designed a modular fixture that held commercial razor heads with toe tabs acting on offset planes. The offset clamping surfaces let the fixture hold the part for features that would otherwise be difficult to machine. I designed around how the operator would load and clamp the part, as well as what the machine needed to reach.&quot;},{&quot;title&quot;:&quot;Replacing repetitive masking&quot;,&quot;text&quot;:&quot;Before sandblasting, the handle needed protection while the center region remained exposed. I designed a compliant, snap-in 3D-printed fixture to mask the surrounding surfaces and make that setup repeatable. Alongside these projects, I worked on machine setup and maintenance, dimensional checks, and GD&amp;T on live production work.&quot;}]"
           data-imgs='["images/cnc-parts-foam.webp","images/cnc_handles.webp", "images/reverse_engineering.png","images/cnc_project.webp","images/sandblaster_cnc.webp","images/cnc-parts-calipers.webp"]'>
           <div class="aspect-video overflow-hidden"><img loading="lazy" decoding="async" src="images/cnc-4axis-fixture.jpg" alt="CNC" class="proj-img w-full h-full object-cover brightness-90"/></div>
           <div class="p-6">
             <p class="text-[10px] text-on-surface-variant uppercase tracking-widest mb-2">Manufacturing</p>
             <h4 class="text-lg font-bold text-on-surface group-hover:text-primary transition-colors font-['Syne']">CNC Intern</h4>
-            <p class="text-sm text-on-surface-variant mt-2 leading-relaxed">4-axis HAAS. Commercial production. SolidWorks fixturing.</p>
+            <p class="text-sm text-on-surface-variant mt-2 leading-relaxed">I worked on live four-axis HAAS production, machined more than 500 parts, and designed fixtures for machining and finishing.</p>
             <div class="flex gap-2 mt-4"><span class="tag">HAAS</span><span class="tag">GD&T</span></div>
           </div>
         </div>
 
         <!-- Prosthetics internship -->
-        <div class="proj-item reveal d1 arc-card gb bg-surface-container rounded-2xl overflow-hidden group cursor-pointer" data-category="prosthetics"
-          data-title="Prosthetics Design - Robard Bionics"
-          data-kicker="Design Internship · Robard Bionics · 2025"
-          data-tags="SolidWorks,Medical Devices,Prosthetics,Biomechanics"
-          data-desc="Working directly with Robard Bionics, I designed distal attachments and refined the aesthetic of both a pinky prosthetic and a lower limb prosthetic in SolidWorks. Shadowing client consultations gave direct exposure to how these decisions affect amputee patients in daily life."
-          data-highlights='["Designed multiple distal attachments for prosthetic devices","Refined pinky prosthetic for functional and aesthetic requirements","Contributed to lower limb prosthetic aesthetic redesign","Shadowed client consultations - observed engineering impact on amputee patients first-hand","Medical device design under real clinical constraints"]'
-          data-imgs='[]'>
-          <div class="no-photo aspect-video flex items-center justify-center">
-            <div class="text-center">
-              <div class="w-10 h-10 rounded-full border border-outline-variant/40 flex items-center justify-center mx-auto mb-3">
-                <span class="material-symbols-outlined text-on-surface-variant text-[18px]">accessibility_new</span>
-              </div>
-              <span class="text-[9px] font-bold uppercase tracking-[.2em] text-on-surface-variant">Robard Bionics</span>
-            </div>
-          </div>
+        <div class="proj-item reveal arc-card gb bg-surface-container rounded-2xl overflow-hidden group cursor-pointer" data-category="cad"
+          data-title="Palomar College Industrial Shop Fan"
+          data-kicker="Creo - Assembly and manufacturing drawings - 2025"
+          data-tags="Creo,Engineering Drawings,Assembly,Bill of Materials,Aluminum 6061-T6"
+          data-desc="I modeled an 18-inch industrial shop fan and tilting stand for the Palomar College industrial shop, then documented the assembly in Creo. The drawing set had to help someone understand both the full assembly and the parts needed to build it, so I made a two-sheet assembly drawing with an exploded view, item balloons, and a 24-item bill of materials.&#10;&#10;I also created a separate motor-mount detail drawing. It calls out 6061-T6 aluminum and black anodize, along with hole dimensions, positional dimensions, and tolerances. The assembly sheets show the overall envelope and tilt positions; the detail print gives the machinist the information needed for the mount. Together, the drawings show how I communicate an assembly and a manufacturable part at different levels of detail."
+          data-imgs='["drawings/fan-assembly-sheet-1.png","drawings/fan-assembly-sheet-2.png","drawings/fan-motor-mount.png"]'
+          data-docs='[{"label":"Fan assembly drawing - 2 sheets","url":"drawings/sk5523-1000.pdf"},{"label":"Fan motor mount detail - 1 sheet","url":"drawings/sk5523-1002.pdf"}]'
+          data-process="[{&quot;title&quot;:&quot;Showing how the assembly fits together&quot;,&quot;text&quot;:&quot;The two-sheet assembly drawing uses an exploded view, item balloons, and a 24-item bill of materials to tie each component to the parts list. The other sheet shows the fan’s overall envelope and tilt positions. I wanted a reader to be able to move from the assembled product to the individual parts without guessing how the components relate.&quot;},{&quot;title&quot;:&quot;Giving the motor mount its own detail&quot;,&quot;text&quot;:&quot;The motor-mount drawing specifies 6061-T6 aluminum and a black anodized finish, then gives the critical hole sizes, positional dimensions, and tolerances. I separated that manufacturing information from the assembly view so the mount could be read and made without crowding the overall drawing.&quot;}]">
+          <div class="aspect-video overflow-hidden"><img loading="lazy" decoding="async" src="drawings/fan-assembly-sheet-1.png" alt="Creo assembly drawing for an 18-inch industrial shop fan" class="proj-img w-full h-full object-cover object-top"/></div>
           <div class="p-6">
-            <p class="text-[10px] text-on-surface-variant uppercase tracking-widest mb-2">Prosthetics</p>
-            <h4 class="text-lg font-bold text-on-surface group-hover:text-primary transition-colors font-['Syne']">Prosthetics Design Intern</h4>
-            <p class="text-sm text-on-surface-variant mt-2 leading-relaxed">Distal attachments &amp; lower limb refinement. Real patients.</p>
-            <div class="flex gap-2 mt-4"><span class="tag">Medical</span><span class="tag">SolidWorks</span></div>
+            <p class="text-[10px] text-on-surface-variant uppercase tracking-widest mb-2">Creo - Drawing Package</p>
+            <h4 class="text-lg font-bold text-on-surface group-hover:text-primary transition-colors font-['Syne']">Industrial Shop Fan</h4>
+            <p class="text-sm text-on-surface-variant mt-2 leading-relaxed">Creo drawings show the full fan assembly, its 24-item parts list, and a separately detailed motor mount.</p>
+            <div class="flex gap-2 mt-4"><span class="tag">Engineering Drawings</span><span class="tag">Creo</span></div>
           </div>
         </div>
-
-        <!-- Cycloidal Drive -->
         <div class="proj-item reveal d2 arc-card gb bg-surface-container rounded-2xl overflow-hidden group cursor-pointer" data-category="cad"
           data-title="Cycloidal Drive Gearbox - 14:1 Custom Design"
           data-kicker="Independent CAD Project · Cost-Optimized for 3D Printing"
           data-tags="SolidWorks,Gearbox Design,FEA,3D Printing,Cost Optimization,Actuator Design"
-          data-desc="Independently designed a 14:1 custom cycloidal drive from scratch in SolidWorks, with a focus on minimizing cost and optimizing for 3D printing. Used two epicycloid rotors rather than one to cancel out the radial forces produced by the eccentric cams. Used 3D-printed shafts paired with cheap skateboard bearings for tangential cycloid motion - instead of aluminum/steel pins - dramatically reducing cost and improving manufacturability."
-          data-highlights='["14:1 reduction ratio - fully custom designed from scratch in SolidWorks","Dual epicycloid rotors cancel radial forces from eccentric cams - smoother output","3D-printed shafts + skateboard bearings replace steel pins - major cost reduction","Designed entirely for 3D printability - no metal machining required","Purpose: understand actuator design and compare cycloidal vs. classic gearbox tradeoffs"]'
+          data-desc="I designed this 14:1 cycloidal drive in SolidWorks as a low-cost mechanism that could be made with 3D printing. One of the main decisions was to use two epicycloid rotors instead of a single rotor. The paired rotors counter the radial forces created by the eccentric cams, which was the reason for the layout.&#10;&#10;I also tried to keep the parts and materials accessible. Rather than use machined aluminum or steel pins for the tangential motion, I designed around 3D-printed shafts and inexpensive skateboard bearings. That changed the cost and manufacturing approach, but it still leaves engineering questions to answer. I have not established torque capacity, backlash, or efficiency; those are measurements I would need before making claims about performance."
+          data-process="[{&quot;title&quot;:&quot;Working toward an inexpensive build&quot;,&quot;text&quot;:&quot;The drive is designed around a 14:1 reduction and parts that can be 3D printed. I used two epicycloid rotors to counter the radial forces from the eccentric cams. For the tangential motion, printed shafts and skateboard bearings take the place of machined metal pins. The goal was to make a useful mechanism without making precision metal parts the price of entry.&quot;},{&quot;title&quot;:&quot;What I still need to measure&quot;,&quot;text&quot;:&quot;My current design is a CAD and manufacturing concept, not a validated gearbox. Before comparing it fairly with another drive, I would check the package size and shaft dimensions, inspect structural integrity, and measure torque capacity, backlash, and efficiency. Those are next steps, not results I have already achieved.&quot;}]"
           data-imgs='["images/cycloidal-drive.webp","images/cycloidal-section.webp"]'>
           <div class="aspect-video overflow-hidden"><img loading="lazy" decoding="async" src="images/cycloidal-drive.webp" alt="Cycloidal" class="proj-img w-full h-full object-cover brightness-90"/></div>
           <div class="p-6">
             <p class="text-[10px] text-on-surface-variant uppercase tracking-widest mb-2">CAD Design</p>
             <h4 class="text-lg font-bold text-on-surface group-hover:text-primary transition-colors font-['Syne']">Cycloidal Drive</h4>
-            <p class="text-sm text-on-surface-variant mt-2 leading-relaxed">Custom 14:1 gearbox. FEA-validated. 3D-printable.</p>
+            <p class="text-sm text-on-surface-variant mt-2 leading-relaxed">A 14:1 cycloidal drive designed for low-cost 3D printing; performance testing remains future work.</p>
             <div class="flex gap-2 mt-4"><span class="tag">Gearbox</span></div>
           </div>
         </div>
 
+        <!-- Aperture / Jeremy Fielding -->
+        <div class="proj-item reveal arc-card gb bg-surface-container rounded-2xl overflow-hidden group cursor-pointer" data-category="cad"
+          data-title="Aperture Mechanism - Jeremy Fielding"
+          data-kicker="Client Commission · Jeremy Fielding · 1M+ Subscribers · Fusion 360"
+          data-tags="Fusion 360,Mechanism Design,Aperture,Client Work,Professional Commission"
+          data-desc="Jeremy Fielding commissioned me to design a custom aperture mechanism for an upcoming video. I worked directly from his brief through the final Fusion 360 CAD deliverable, taking responsibility for the mechanism design and the handoff on a client timeline.&#10;&#10;The work was a professional commission for an engineer and creator whose videos focus on mechanisms and engineering. I am showing the project as a design and CAD deliverable; the information I have does not include a physical prototype or performance testing."
+          data-process="[{&quot;title&quot;:&quot;From brief to CAD&quot;,&quot;text&quot;:&quot;I developed the custom aperture mechanism from the initial brief through the final Fusion 360 model. The commission gave me direct responsibility for turning a client request into a concrete mechanical design and preparing the CAD deliverable.&quot;},{&quot;title&quot;:&quot;Working to a client timeline&quot;,&quot;text&quot;:&quot;I worked directly with Jeremy Fielding, a mechanical engineer and YouTube creator, and delivered the design on a professional client timeline. This entry records my design scope and client work without claiming a built prototype or test result.&quot;}]"
+          data-imgs='[]'>
+          <div class="aspect-video flex flex-col items-center justify-center gap-3 bg-primary-container/25 text-primary">
+            <span class="material-symbols-outlined text-6xl">center_focus_weak</span>
+            <span class="text-xs font-semibold uppercase tracking-[.16em]">Fusion 360 · Aperture mechanism</span>
+          </div>
+          <div class="p-6">
+            <p class="text-[10px] text-on-surface-variant uppercase tracking-widest mb-2">Client Commission</p>
+            <h4 class="text-lg font-bold text-on-surface group-hover:text-primary transition-colors font-['Syne']">Aperture Mechanism</h4>
+            <p class="text-sm text-on-surface-variant mt-2 leading-relaxed">I designed a custom aperture mechanism for Jeremy Fielding, from his brief through final Fusion 360 CAD.</p>
+            <div class="flex gap-2 mt-4"><span class="tag">Client Work</span><span class="tag">Fusion 360</span></div>
+          </div>
+        </div>
         <!-- Solar -->
         <div class="proj-item reveal d3 arc-card gb bg-surface-container rounded-2xl overflow-hidden group cursor-pointer" data-category="cad"
           data-title="Solar Panel Tracking Mechanism"
           data-kicker="Modeling the Future Challenge · Semifinalist · Independent Design"
           data-tags="SolidWorks,Mechanism Design,Actuators,Kinematics,F-150 Lightning,Low Cost"
-          data-desc="Challenged to design a mechanism that fits fully packaged in the bed of an F-150 Lightning truck and provides at least 900W of power. The current design provides 1000W. Designed to be low cost and require only 2-axis machining throughout. The mechanism uses a lead-screw driven linkage to tilt solar panels to optimal sun-tracking angles."
-          data-highlights='["Fits fully packaged in F-150 Lightning truck bed - hard geometric constraint","Provides 1000W - exceeds 900W requirement","Designed for low cost: requires only 2-axis machining throughout","Fully extended and packaged states modeled in SolidWorks with motion analysis","Named Semifinalist in the Modeling the Future Challenge"]'
-          data-imgs='["images/solarpowerextended.png","images/solarpowerclosed.webp","images/solarpowerframe.webp"]'>
+          data-desc="The Modeling the Future challenge gave me two requirements that had to work together: the solar mechanism needed to fit fully inside the bed of an F-150 Lightning when packaged, and the design needed to provide at least 900 watts. My SolidWorks design was sized for 1,000 watts. I kept the mechanism low-cost and limited the machined parts to two-axis machining.&#10;&#10;I used a lead-screw-driven linkage to tilt the panels toward useful sun-tracking angles. The linkage had to move the panels when deployed and still fold into the truck-bed package, so I modeled both the extended and stored configurations. This is a designed mechanism and a modeled power target; I am not presenting it as a built system with measured field output."
+        data-process="[{&quot;title&quot;:&quot;Fitting the design to the truck&quot;,&quot;text&quot;:&quot;The truck bed was a packaging constraint, not just a place to mount the panels. I modeled the mechanism in its stored state to make sure the full assembly could fit, then checked the extended state for panel movement. Keeping both positions in the CAD model made the packaging and motion requirements visible at the same time.&quot;},{&quot;title&quot;:&quot;Balancing power, cost, and manufacturing&quot;,&quot;text&quot;:&quot;The design target was at least 900 watts, and the current model was sized for 1,000 watts. A lead-screw-driven linkage tilts the panels, while the parts were planned around low cost and two-axis machining. The numbers describe the design target and model, not measured power from a completed field installation.&quot;}]" data-imgs='["images/solarpowerextended.png","images/solarpowerclosed.webp","images/solarpowerframe.webp"]'>
           <div class="aspect-video overflow-hidden"><img loading="lazy" decoding="async" src="images/solarpowerextended.png" alt="Solar" class="proj-img w-full h-full object-cover brightness-90"/></div>
           <div class="p-6">
             <p class="text-[10px] text-on-surface-variant uppercase tracking-widest mb-2">CAD · Competition</p>
             <h4 class="text-lg font-bold text-on-surface group-hover:text-primary transition-colors font-['Syne']">Solar Tracker</h4>
-            <p class="text-sm text-on-surface-variant mt-2 leading-relaxed">Modeling the Future Semifinalist. Lead-screw mechanism.</p>
+            <p class="text-sm text-on-surface-variant mt-2 leading-relaxed">A lead-screw linkage moves the panels while the mechanism packages inside an F-150 Lightning bed.</p>
             <div class="flex gap-2 mt-4"><span class="tag">Mechanism</span></div>
           </div>
         </div>
@@ -735,14 +746,13 @@ tailwind.config = {
           data-title="Independent Prosthetics - Topology-Optimized Lower Limb"
           data-kicker="Independent Project · SolidWorks · Topology Optimization"
           data-tags="SolidWorks,Topology Optimization,Prosthetics,Biomechanics,FEA,Independent"
-          data-desc="Independently designed a topology-optimized lower limb prosthetic in SolidWorks - separate from the Robard Bionics internship. Applied topology optimization to derive an organic, load-path-following geometry that minimizes material use while maintaining structural integrity under gait loading. The result closely resembles structures found in skeletal anatomy."
-          data-highlights='["Independently designed - not part of internship work, driven by personal engineering interest","Applied topology optimization: material follows load paths, removed from low-stress regions","Organic geometry emerges from structural analysis - mirrors skeletal anatomy","Designed in SolidWorks with FEA validation of key load cases","Demonstrates understanding of biomechanics, structural optimization, and medical device design principles"]'
-          data-imgs='["images/prosthetics-leg1.jpg","images/prosthetics-leg2.jpg","images/prosthetics-leg3.jpg"]'>
+          data-desc="This lower-limb prosthetic is an independent SolidWorks project, separate from my work with Robard Bionics. I used topology optimization to explore a structure that follows the load paths through the part instead of keeping material everywhere in a conventional block-like shape. The resulting geometry is organic and resembles skeletal structures, but it came from the structural design process rather than from adding a surface treatment for appearance.&#10;&#10;My goal was to reduce material while preserving structural integrity under gait loading. I treated the optimization output as a starting point for engineering judgment: the geometry still has to be interpreted, modeled, and checked as a usable part. This is a CAD design project; I am not presenting it as a clinically tested prosthesis."
+        data-process="[{&quot;title&quot;:&quot;Letting the load paths shape the part&quot;,&quot;text&quot;:&quot;I applied topology optimization to a lower-limb prosthetic concept in SolidWorks. The process removed material from lower-stress regions and left a geometry that follows the structural load paths. I used the resulting form as a design direction, then modeled it into a coherent part rather than treating the solver output as a finished product.&quot;},{&quot;title&quot;:&quot;Keeping the scope honest&quot;,&quot;text&quot;:&quot;This is an independent CAD and structural-design project. The design goal is to reduce material while maintaining integrity under gait loading; it is not a claim of clinical validation or patient testing. I included it because it shows how I approach a problem where structure, weight, and the needs of the person using the device all matter.&quot;}]" data-imgs='["images/prosthetics-leg1.jpg","images/prosthetics-leg2.jpg","images/prosthetics-leg3.jpg"]'>
           <div class="pc-img-wrap"><img class="pc-img" src="images/prosthetics-leg1.jpg" alt="Prosthetics" loading="lazy"/></div>
           <div class="p-6">
             <p class="text-[10px] text-on-surface-variant uppercase tracking-widest mb-2">Independent · Prosthetics</p>
             <h4 class="text-lg font-bold text-on-surface group-hover:text-primary transition-colors font-['Syne']">Prosthetics - Topology Opt.</h4>
-            <p class="text-sm text-on-surface-variant mt-2 leading-relaxed">Load-path geometry. FEA validated. Mirrors skeletal anatomy.</p>
+            <p class="text-sm text-on-surface-variant mt-2 leading-relaxed">An independent prosthetic design shaped with topology optimization to follow structural load paths.</p>
             <div class="flex gap-2 mt-4"><span class="tag">Topology Opt.</span></div>
           </div>
         </div>
@@ -752,14 +762,13 @@ tailwind.config = {
           data-title="Open-Source FRC Elevators - GitHub"
           data-kicker="Independent Project · Open Source · Self-Taught"
           data-tags="SolidWorks,Elevators,Open Source,GitHub,Variables,FRC Community"
-          data-desc="When teaching myself FRC mechanism design, I couldn't find any SolidWorks models or tutorials for elevators online. Through dozens of hours troubleshooting and studying robot photos, I figured it out - then designed 3 complete elevator types (cable driven, chain driven, and belt driven 2-stage) using variables for custom sizing, and published them open source on GitHub to help other FRC teams and students."
-          data-highlights='["Designed 3 elevator types: cable-driven, chain-driven, and belt-driven 2-stage","All models use SolidWorks equations/variables - fully configurable for custom team builds","Published open source on GitHub - helping other FRC teams access complex mechanism designs","Entirely self-taught: no tutorials existed, figured it out from photos and troubleshooting","Demonstrates initiative, self-direction, and commitment to the FRC community"]'
-          data-imgs='["images/extended_elevator.webp","images/Belt-driven_elevator.png","images/elevator_explodedview.webp"]'>
+          data-desc="When I was teaching myself FRC mechanism design, I could not find SolidWorks elevator models or tutorials that showed how the mechanisms were actually put together. I spent dozens of hours studying robot photos and troubleshooting my own models until I had a clearer picture of how the parts related. I then built three configurable elevator designs and published them on GitHub so another student would have somewhere to start.&#10;&#10;The set includes cable-driven, chain-driven, and two-stage belt-driven elevators. I used SolidWorks equations and variables so the models could be resized for different teams instead of being locked to one robot. I published the files on GitHub so other students could inspect the assemblies, follow the variable-driven sizing, and adapt the models instead of starting with screenshots alone."
+        data-process="[{&quot;title&quot;:&quot;Learning from what I could find&quot;,&quot;text&quot;:&quot;I could not find the SolidWorks elevator models and tutorials I was looking for, so I studied robot photos and worked through the designs myself. That meant spending time understanding the cable paths, chain runs, and belt routing instead of copying a ready-made assembly. I used that process to build up three different elevator architectures.&quot;},{&quot;title&quot;:&quot;Making the models adaptable&quot;,&quot;text&quot;:&quot;The three designs are cable-driven, chain-driven, and two-stage belt-driven. I built them with equations and variables in SolidWorks so users can change dimensions for their own application. I published the files on GitHub to make the examples accessible to FRC teams and students who are learning mechanism design.&quot;}]" data-imgs='["images/extended_elevator.webp","images/Belt-driven_elevator.png","images/elevator_explodedview.webp"]'>
           <div class="aspect-video overflow-hidden"><img loading="lazy" decoding="async" src="images/extended_elevator.webp" alt="Elevator" class="proj-img w-full h-full object-cover brightness-90"/></div>
           <div class="p-6">
             <p class="text-[10px] text-on-surface-variant uppercase tracking-widest mb-2">CAD · Open Source</p>
             <h4 class="text-lg font-bold text-on-surface group-hover:text-primary transition-colors font-['Syne']">FRC Elevators</h4>
-            <p class="text-sm text-on-surface-variant mt-2 leading-relaxed">3 types, variable-driven. Self-taught. Published on GitHub.</p>
+            <p class="text-sm text-on-surface-variant mt-2 leading-relaxed">I taught myself the mechanisms and published three adjustable elevator models for other FRC teams.</p>
             <div class="flex gap-2 mt-4"><span class="tag">Open Source</span></div>
           </div>
         </div>
@@ -769,14 +778,14 @@ tailwind.config = {
           data-title="FRC 2018 Robot · SolidWorks Practice Project"
           data-kicker="Independent Practice Project · 16 Days · Designed During Finals"
           data-tags="SolidWorks,FEA,Top-Down Assembly,Pneumatics,Gearbox Design,Elevator"
-          data-desc="A fully self-designed FRC 2018 robot modeled in SolidWorks in 16 days - during finals. The goal was deliberate practice: top-down assembly approach, embedded FEA on structural parts, and exposure to real mechanism design across pneumatics, geared systems, and pulley/sprocket driven assemblies. The timeline forced a lot of prioritization. Completed it. Key mechanisms: a 270° dead axle arm driven by a 21:1 two-stage gearbox - dead axle chosen to prevent bending under load - a 2-stage cable-driven elevator climb, tank drivetrain, and pneumatically actuated arms. The FEA work stayed within static simulation but gave a solid foundation for understanding structural loading in mechanism design."
-          data-highlights='["Completed in 16 days during finals - a deliberately hard constraint, met it","Top-down assembly design: major system relationships drove sub-component geometry","270° dead axle arm: 21:1 two-stage gearbox, 1/8\" hollow steel tube - dead axle prevents bending under load","2-stage cable-driven elevator climb, tank drivetrain, and pneumatically actuated arms","Applied SolidWorks embedded FEA (static simulation) to validate structural parts","Developed deeper understanding of pneumatics, geared systems, and pulley/sprocket mechanisms"]'
+          data-desc="I modeled this FRC robot in SolidWorks in 16 days while I was also in the middle of finals. I set myself the deadline because I wanted to practice a top-down assembly workflow and get experience with several kinds of mechanisms in one design. I finished the full robot model, but it was a CAD practice project rather than a robot we built or competed with.&#10;&#10;The main mechanisms were a 270-degree dead-axle arm with a 21:1 two-stage gearbox, a two-stage cable elevator for climbing, a tank drivetrain, and pneumatic arms. I chose a dead axle for the arm to avoid bending the shaft under load. I also ran static FEA on selected structural parts. The short timeline forced me to prioritize, and the project gave me a place to work through how an arm, elevator, drivetrain, and pneumatics fit into one assembly."
+          data-process="[{&quot;title&quot;:&quot;Modeling the robot as a system&quot;,&quot;text&quot;:&quot;I used a top-down assembly approach so the positions and geometry of the mechanisms could be considered together. The model included a tank drivetrain, pneumatic arms, a cable-driven elevator, and the main arm. Working across the whole assembly made it easier to see where choices in one subsystem affected the space available to another.&quot;},{&quot;title&quot;:&quot;The arm and its gearbox&quot;,&quot;text&quot;:&quot;The arm rotated through about 270 degrees and used a 21:1 two-stage gearbox. I chose a dead-axle arrangement to avoid bending the shaft under load. I also applied static FEA to selected structural components. That analysis gave me practice reading structural loading, but it was limited to static simulation.&quot;},{&quot;title&quot;:&quot;A deliberately short deadline&quot;,&quot;text&quot;:&quot;I gave myself 16 days and completed the model during finals. The timeline forced me to decide which mechanisms and details needed the most attention. I did not build or test this robot, so the project demonstrates CAD scope and system layout rather than competition performance.&quot;}]"
           data-imgs='["images/frc2018-full.webp","images/frc2018-armrender.jpg","images/frc2018-cad.webp", "images/frc2018extended.webp"]'>
           <div class="aspect-video overflow-hidden"><img loading="lazy" decoding="async" src="images/frc2018-full.webp" alt="FRC 2018 Practice Robot" class="proj-img w-full h-full object-cover brightness-90"/></div>
           <div class="p-6">
             <p class="text-[10px] text-on-surface-variant uppercase tracking-widest mb-2">FRC · Practice Project</p>
             <h4 class="text-lg font-bold text-on-surface group-hover:text-primary transition-colors font-['Syne']">FRC 2018 Robot</h4>
-            <p class="text-sm text-on-surface-variant mt-2 leading-relaxed">16 days. SolidWorks FEA. Dead axle arm, elevator, pneumatics.</p>
+            <p class="text-sm text-on-surface-variant mt-2 leading-relaxed">A complete SolidWorks practice robot, modeled in 16 days during finals and never presented as a built robot.</p>
             <div class="flex gap-2 mt-4"><span class="tag">FEA</span><span class="tag">SolidWorks</span></div>
           </div>
         </div>
@@ -834,8 +843,7 @@ tailwind.config = {
           <div class="flex flex-wrap gap-2 mt-4"><span class="tag">~7% Acceptance</span><span class="tag">1 of 19 Fellows</span><span class="tag">Industry Placement</span></div>
         </div>
       </div>
-
-      <div class="reveal exp-row flex flex-col md:flex-row gap-6 md:gap-16 py-10 border-b border-outline-variant/10 group hover:bg-surface-container-low/40 rounded-2xl px-4 transition-all">
+<div class="reveal exp-row flex flex-col md:flex-row gap-6 md:gap-16 py-10 border-b border-outline-variant/10 group hover:bg-surface-container-low/40 rounded-2xl px-4 transition-all">
         <div class="md:w-44 flex-shrink-0">
           <div class="text-primary text-xs font-bold uppercase tracking-widest">Sept 2022 – June 2026</div>
           <div class="text-on-surface-variant text-[10px] uppercase tracking-widest mt-1">FRC Team 2658 Σ-Motion</div>
@@ -871,6 +879,17 @@ tailwind.config = {
         </div>
       </div>
 
+      <div class="reveal d1 exp-row flex flex-col md:flex-row gap-6 md:gap-16 py-10 border-b border-outline-variant/10 group hover:bg-surface-container-low/40 rounded-2xl px-4 transition-all">
+        <div class="md:w-44 flex-shrink-0">
+          <div class="text-primary text-xs font-bold uppercase tracking-widest">2025</div>
+          <div class="text-on-surface-variant text-[10px] uppercase tracking-widest mt-1">Jeremy Fielding</div>
+        </div>
+        <div class="flex-grow">
+          <h3 class="text-2xl font-black text-on-surface font-['Syne'] group-hover:text-primary transition-colors">Mechanical Design Consultant</h3>
+          <p class="text-on-surface-variant text-sm mt-3 leading-relaxed max-w-2xl">Jeremy Fielding, a mechanical engineer and YouTube creator with over 1 million subscribers, commissioned me to design a custom aperture mechanism for an upcoming video. I delivered the Fusion 360 CAD from the initial brief through the final handoff on a client timeline.</p>
+          <div class="flex flex-wrap gap-2 mt-4"><span class="tag">Fusion 360</span><span class="tag">Mechanism Design</span><span class="tag">Client Work</span></div>
+        </div>
+      </div>
       <div class="reveal d2 exp-row flex flex-col md:flex-row gap-6 md:gap-16 py-10 border-b border-outline-variant/10 group hover:bg-surface-container-low/40 rounded-2xl px-4 transition-all">
         <div class="md:w-44 flex-shrink-0">
           <div class="text-primary text-xs font-bold uppercase tracking-widest">Jul 2023 – Jun 2026</div>
@@ -944,6 +963,30 @@ tailwind.config = {
 
   </div><!-- ╚══ /TAB: EXPERIENCE ══╝ -->
 
+
+  <!-- ╔══ TAB: PHOTOS ══╗ -->
+  <div class="tab-panel" data-panel="photos">
+    <section class="px-6 md:px-12 py-24 bg-background min-h-screen">
+      <div class="max-w-screen-xl mx-auto">
+        <div class="reveal flex items-center gap-4 mb-12">
+          <span class="w-8 h-px bg-primary/40"></span>
+          <h2 class="text-[11px] text-primary font-bold uppercase tracking-[.2em]">Photography</h2>
+          <div class="flex-grow h-px bg-outline-variant/20"></div>
+        </div>
+        <h3 class="reveal-wipe text-4xl md:text-5xl font-black text-on-surface font-['Syne'] tracking-tight mb-4">Photos</h3>
+        <p class="reveal text-on-surface-variant leading-relaxed max-w-2xl mb-12">A selection of photographs from around campus and the surrounding area. Select any image to view it at full size.</p>
+        <div class="photo-grid">
+          <button type="button" class="photo-cell" data-full="images/4R3A4434.JPG" aria-label="View a stone campus arch and hanging lantern framed by fall color"><img loading="lazy" decoding="async" src="images/photos/4R3A4434-web.jpg" alt="Stone campus arch and hanging lantern framed by fall color"/></button>
+          <button type="button" class="photo-cell" data-full="images/4R3A4435.JPG" aria-label="View a clock tower through autumn branches"><img loading="lazy" decoding="async" src="images/photos/4R3A4435-web.jpg" alt="Clock tower viewed through autumn branches"/></button>
+          <button type="button" class="photo-cell" data-full="images/4R3A4436.JPG" aria-label="View a Gothic campus arch framing an iron gate and autumn trees"><img loading="lazy" decoding="async" src="images/photos/4R3A4436-web.jpg" alt="Gothic campus arch framing an iron gate and autumn trees"/></button>
+          <button type="button" class="photo-cell" data-full="images/4R3A4446.JPG" aria-label="View a carved stone entrance in afternoon light"><img loading="lazy" decoding="async" src="images/photos/4R3A4446-web.jpg" alt="Carved stone entrance under direct sunlight"/></button>
+          <button type="button" class="photo-cell" data-full="images/4R3A4449.JPG" aria-label="View an autumn street lined with colorful trees"><img loading="lazy" decoding="async" src="images/photos/4R3A4449-web.jpg" alt="Tree-lined street with autumn leaves and traffic"/></button>
+          <button type="button" class="photo-cell" data-full="images/4R3A4457.JPG" aria-label="View a Gothic campus facade framed by yellow leaves"><img loading="lazy" decoding="async" src="images/photos/4R3A4457-web.jpg" alt="Gothic campus facade framed by yellow leaves and students"/></button>
+          <button type="button" class="photo-cell" data-full="images/4R3A4462.JPG" aria-label="View a squirrel foraging among fall leaves"><img loading="lazy" decoding="async" src="images/photos/4R3A4462-web.jpg" alt="Squirrel foraging among fall leaves"/></button>
+        </div>
+      </div>
+    </section>
+  </div><!-- ╚══ /TAB: PHOTOS ══╝ -->
   <!-- ╔══ TAB: CONTACT ══╗ -->
   <div class="tab-panel" data-panel="contact">
 
@@ -1006,14 +1049,14 @@ tailwind.config = {
   <button data-tab="about"      class="tab-btn mobile-tab flex flex-col items-center gap-1"><span class="material-symbols-outlined text-[22px]">person</span><span class="text-[9px] uppercase tracking-widest font-bold">About</span></button>
   <button data-tab="work"       class="tab-btn mobile-tab flex flex-col items-center gap-1"><span class="material-symbols-outlined text-[22px]">grid_view</span><span class="text-[9px] uppercase tracking-widest font-bold">Work</span></button>
   <button data-tab="experience" class="tab-btn mobile-tab flex flex-col items-center gap-1"><span class="material-symbols-outlined text-[22px]">work</span><span class="text-[9px] uppercase tracking-widest font-bold">Exp.</span></button>
-  <button data-tab="portfolio"  class="tab-btn mobile-tab flex flex-col items-center gap-1"><span class="material-symbols-outlined text-[22px]">photo_camera</span><span class="text-[9px] uppercase tracking-widest font-bold">Photos</span></button>
-  <button data-tab="contact"    class="tab-btn mobile-tab flex flex-col items-center gap-1"><span class="material-symbols-outlined text-[22px]">mail</span><span class="text-[9px] uppercase tracking-widest font-bold">Contact</span></button>
+  <button data-tab="photos" class="tab-btn mobile-tab flex flex-col items-center gap-1"><span class="material-symbols-outlined text-[22px]">photo_camera</span><span class="text-[9px] uppercase tracking-widest font-bold">Photos</span></button>
+<button data-tab="contact"    class="tab-btn mobile-tab flex flex-col items-center gap-1"><span class="material-symbols-outlined text-[22px]">mail</span><span class="text-[9px] uppercase tracking-widest font-bold">Contact</span></button>
 </nav>
 
 <!-- ══════════════ DETAIL PANEL ══════════════ -->
 <div id="detail-overlay" class="fixed inset-0 z-[200] flex justify-end opacity-0 pointer-events-none">
   <div id="detail-scrim" class="absolute inset-0 bg-black/70 backdrop-blur-sm cursor-pointer"></div>
-  <div id="detail-panel" class="relative z-10 w-full max-w-2xl h-full bg-surface-container-low border-l border-outline-variant/20 overflow-y-auto translate-x-full flex flex-col">
+  <div id="detail-panel" class="relative z-10 w-full max-w-4xl h-full bg-surface-container-low border-l border-outline-variant/20 overflow-y-auto translate-x-full flex flex-col">
     <!-- sticky close -->
     <div class="sticky top-0 z-20 flex justify-end px-4 pt-4 -mb-14 pointer-events-none">
       <button id="dp-close" aria-label="Close project details" class="pointer-events-auto w-10 h-10 rounded-full bg-black/60 backdrop-blur-sm flex items-center justify-center text-white hover:text-primary transition-colors">
@@ -1021,16 +1064,13 @@ tailwind.config = {
       </button>
     </div>
     <div id="dp-img" class="w-full h-96 bg-surface-container-high relative overflow-hidden flex-shrink-0"></div>
-    <div class="p-8 flex-grow">
+    <div class="p-8 md:p-12 flex-grow">
       <p id="dp-kicker" class="text-primary text-[10px] font-bold uppercase tracking-[.2em] mb-3"></p>
       <h2 id="dp-title" class="font-['Syne'] font-black text-3xl text-on-surface tracking-tight leading-tight mb-4"></h2>
       <div id="dp-tags" class="flex flex-wrap gap-2 mb-6"></div>
-      <p id="dp-desc" class="text-on-surface-variant text-sm leading-relaxed mb-8"></p>
-      <div class="mb-8">
-        <h3 class="text-[10px] text-primary font-bold uppercase tracking-[.2em] mb-1">Key Highlights</h3>
-        <ul id="dp-hl" class="divide-y divide-outline-variant/10"></ul>
-      </div>
-      <section class="mb-8"><h3 class="text-[10px] text-primary font-bold uppercase tracking-[.2em] mb-3">Design process</h3><div class="grid gap-3 sm:grid-cols-2"><div class="rounded-xl border border-outline-variant/20 bg-surface-container p-4"><h4 class="text-sm font-semibold text-on-surface">Drawings &amp; models</h4><p class="text-sm text-on-surface-variant mt-2">Engineering drawings, CAD views, and revisions.</p></div><div class="rounded-xl border border-outline-variant/20 bg-surface-container p-4"><h4 class="text-sm font-semibold text-on-surface">Decisions &amp; tradeoffs</h4><p class="text-sm text-on-surface-variant mt-2">Why this approach was chosen and what alternatives were considered.</p></div><div class="rounded-xl border border-outline-variant/20 bg-surface-container p-4"><h4 class="text-sm font-semibold text-on-surface">Testing &amp; iteration</h4><p class="text-sm text-on-surface-variant mt-2">What failed, what changed, and what worked in the end.</p></div><div class="rounded-xl border border-outline-variant/20 bg-surface-container p-4"><h4 class="text-sm font-semibold text-on-surface">Outcome &amp; lessons</h4><p class="text-sm text-on-surface-variant mt-2">Results, reflections, and supporting documentation.</p></div></div></section>
+      <p id="dp-desc" class="text-on-surface-variant text-base leading-8 whitespace-pre-line mb-10"></p>
+      
+      <div id="dp-process" class="hidden mb-8"><div id="dp-process-content" class="space-y-7"></div></div><div id="dp-docs-wrap" class="hidden mb-8"><h3 class="text-[10px] text-primary font-bold uppercase tracking-[.2em] mb-3">Drawing files</h3><div id="dp-docs" class="flex flex-wrap gap-3"></div></div>
       <div id="dp-gal-wrap" class="hidden">
         <h3 class="text-[10px] text-primary font-bold uppercase tracking-[.2em] mb-4">Gallery <span class="text-outline normal-case tracking-normal font-normal text-[9px] ml-2">- click any photo to expand</span></h3>
         <div id="dp-gallery" class="grid grid-cols-1 sm:grid-cols-2 gap-4"></div>
@@ -1061,7 +1101,7 @@ tailwind.config = {
 
 <div id="philosophy-overlay" class="fixed inset-0 z-[300] flex justify-start opacity-0 pointer-events-none" style="transition:opacity .3s ease;">
   <div id="philosophy-scrim" class="absolute inset-0 bg-black/70 backdrop-blur-sm cursor-pointer"></div>
-  <div id="philosophy-panel" class="relative z-10 w-full max-w-2xl h-full bg-surface-container-low border-r border-outline-variant/20 overflow-y-auto" style="transform:translateX(-100%);transition:transform .4s cubic-bezier(.22,1,.36,1);">
+  <div id="philosophy-panel" class="relative z-10 w-full max-w-4xl h-full bg-surface-container-low border-r border-outline-variant/20 overflow-y-auto" style="transform:translateX(-100%);transition:transform .4s cubic-bezier(.22,1,.36,1);">
     <div class="p-10">
       <div class="flex items-start justify-between mb-12">
         <div>
@@ -1188,9 +1228,11 @@ const scrim   = document.getElementById('detail-scrim');
 const dpImg   = document.getElementById('dp-img');
 
 function openDetail(el) {
-  let imgs=[], hls=[];
+  let imgs=[];
   try { imgs = JSON.parse(el.dataset.imgs   || '[]'); } catch(e){}
-  try { hls  = JSON.parse(el.dataset.highlights || '[]'); } catch(e){}
+  let steps=[], docs=[];
+  try { steps = JSON.parse(el.dataset.process || '[]'); } catch(e){}
+  try { docs = JSON.parse(el.dataset.docs || '[]'); } catch(e){}
 
   document.getElementById('dp-kicker').textContent = el.dataset.kicker || '';
   document.getElementById('dp-title').textContent  = el.dataset.title  || '';
@@ -1199,13 +1241,17 @@ function openDetail(el) {
   document.getElementById('dp-tags').innerHTML = (el.dataset.tags || '').split(',').map(t =>
     `<span class="tag">${t.trim()}</span>`).join('');
 
-  document.getElementById('dp-hl').innerHTML = hls.map(h =>
-    `<li class="flex gap-3 items-baseline py-3.5 border-b border-outline-variant/10 text-sm text-on-surface-variant leading-relaxed"><span class="text-primary flex-shrink-0 text-xs">→</span>${h}</li>`).join('');
+  const processWrap = document.getElementById('dp-process');
+  document.getElementById('dp-process-content').innerHTML = steps.map(s =>
+    '<article class="border-l-2 border-primary/40 pl-4"><h4 class="text-lg font-semibold text-on-surface mb-2">' + s.title + '</h4><p class="text-base text-on-surface-variant leading-7 mt-2">' + s.text + '</p></article>').join('');
+  processWrap.classList.toggle('hidden', !steps.length);
+  const docsWrap = document.getElementById('dp-docs-wrap');
+  document.getElementById('dp-docs').innerHTML = docs.map(d =>
+    '<a class="inline-flex items-center gap-2 rounded-full border border-outline-variant/30 bg-surface-container px-4 py-2 text-sm text-on-surface hover:text-primary" href="' + d.url + '" target="_blank" rel="noopener"><span class="material-symbols-outlined text-[18px]">picture_as_pdf</span>' + d.label + '</a>').join('');
+  docsWrap.classList.toggle('hidden', !docs.length);
 
-  dpImg.innerHTML = imgs[0]
-    ? `<img src="${imgs[0]}" alt="${el.dataset.title}" class="w-full h-full object-cover brightness-90 cursor-zoom-in hover:brightness-90 transition-all" data-lb-index="0"/>`
-    : `<div class="w-full h-full no-photo flex items-center justify-center"><span class="text-[10px] uppercase tracking-widest text-on-surface-variant">No image available</span></div>`;
-
+  dpImg.style.display = imgs[0] ? "" : "none";
+  dpImg.innerHTML = imgs[0] ? '<img src="' + imgs[0] + '" alt="' + el.dataset.title + '" class="w-full h-full object-cover brightness-90 cursor-zoom-in hover:brightness-90 transition-all" data-lb-index="0"/>' : '';
   // Store current images for lightbox
   dpImg.dataset.imgs = JSON.stringify(imgs);
   if (imgs[0]) {
@@ -1281,6 +1327,9 @@ function openLightbox(imgs, idx) {
   document.body.style.overflow = 'hidden';
 }
 
+const portfolioPhotos = Array.from(document.querySelectorAll('.photo-cell')).map(cell => cell.dataset.full);
+document.querySelectorAll('.photo-cell').forEach((cell, index) =>
+  cell.addEventListener('click', () => openLightbox(portfolioPhotos, index)));
 function closeLightbox() {
   lb.style.opacity = '0';
   lb.style.pointerEvents = 'none';
@@ -1522,7 +1571,7 @@ document.addEventListener('keydown', e => {
 });
 
 // ── Tab navigation ─────────────────────────────────────
-const TABS = ['about','work','experience','contact'];
+const TABS = ['about','work','experience','photos','contact'];
 function setTab(name, fromUser = true) {
   if (!TABS.includes(name)) name = 'about';
   // Compute slide direction based on tab order
@@ -1588,4 +1637,17 @@ document.querySelectorAll('a[href^="#"]').forEach(a => {
 </script>
 </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
 
