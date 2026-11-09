@@ -4,28 +4,25 @@
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>Simeon Kim · Mechanical Design Portfolio</title>
-<meta name="description" content="Mechanical engineering portfolio featuring FRC robotics, CNC manufacturing, prosthetics design, and research. Yale '30."/>
+<meta name="description" content="Engineering portfolio featuring FRC robotics, CNC manufacturing, technical drawings, prosthetics design, and research."/>
 <meta name="theme-color" content="#f6f3ed"/>
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%2310100e'/%3E%3Ctext x='32' y='43' font-family='Arial,Helvetica,sans-serif' font-size='28' font-weight='900' fill='%23d4a574' text-anchor='middle'%3ESK%3C/text%3E%3C/svg%3E"/>
 <!-- Social sharing -->
 <meta property="og:type" content="website"/>
 <meta property="og:title" content="Simeon Kim · Mechanical Design Portfolio"/>
-<meta property="og:description" content="Mechanical engineering portfolio featuring FRC robotics, CNC manufacturing, prosthetics design, and research. Yale '30."/>
+<meta property="og:description" content="Engineering portfolio featuring FRC robotics, CNC manufacturing, technical drawings, prosthetics design, and research."/>
 <meta property="og:image" content="images/Headshot photo SK.JPG"/>
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:title" content="Simeon Kim · Mechanical Design Portfolio"/>
-<meta name="twitter:description" content="FRC robotics, CNC manufacturing, and prosthetics design. Yale '30."/>
+<meta name="twitter:description" content="FRC robotics, CNC manufacturing, technical drawings, prosthetics design, and research."/>
 <!-- NOTE: after deploying, replace og:image above with the full absolute URL, e.g. https://YOURUSERNAME.github.io/images/Headshot photo SK.JPG - social previews require absolute URLs -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "Person",
   "name": "Simeon Kim",
-  "jobTitle": "Mechanical Designer",
-  "worksFor": [
-    { "@type": "Organization", "name": "Panluminate" },
-    { "@type": "Organization", "name": "" }
-  ],
+  "jobTitle": "Engineering Student",
+  "worksFor": [{ "@type": "Organization", "name": "Panluminate" }],
   "email": "mailto:simeon.kim@yale.edu",
   "address": { "@type": "PostalAddress", "addressLocality": "San Diego", "addressRegion": "CA", "addressCountry": "US" },
   "alumniOf": { "@type": "CollegeOrUniversity", "name": "Yale University" },
@@ -301,16 +298,16 @@ tailwind.config = {
   .now-pill {
     display:inline-flex; align-items:center; gap:11px;
     padding:7px 14px 7px 12px;
-    background:rgba(212,165,116,.08);
-    border:1px solid rgba(212,165,116,.22);
+    background:#efe4d4;
+    border:1px solid #cdb594;
     border-radius:999px;
     font-family:'Outfit',sans-serif;
     font-size:10.5px; font-weight:600;
     letter-spacing:.14em; text-transform:uppercase;
-    color:#d4a574;
+    color:#604a35;
     transition:background .3s, border-color .3s;
   }
-  .now-pill:hover { background:rgba(212,165,116,.12); border-color:rgba(212,165,116,.4); }
+  .now-pill:hover { background:#e8d8c4; border-color:#b99770; }
   .now-pill .now-dot {
     width:7px; height:7px; border-radius:50%;
     background:#d4a574;
@@ -323,10 +320,10 @@ tailwind.config = {
     70%  { box-shadow:0 0 8px rgba(212,165,116,.5), 0 0 0 10px rgba(212,165,116,0); }
     100% { box-shadow:0 0 8px rgba(212,165,116,.5), 0 0 0 0 rgba(212,165,116,0); }
   }
-  .now-pill .now-sep { opacity:.5; }
+  .now-pill .now-sep { color:#745b46; opacity:1; }
   .now-pill .now-task {
-    color:#e6dde0;
-    font-weight:600;
+    color:#332b25;
+    font-weight:700;
     letter-spacing:.04em;
     text-transform:none;
     font-size:11.5px;
@@ -438,7 +435,7 @@ tailwind.config = {
             <span data-scramble>SIMEON</span><br/><span class="grad-text" data-scramble>KIM.</span>
           </h1>
           <p class="reveal d2 text-on-surface-variant text-lg md:text-xl leading-relaxed mt-8 max-w-lg">
-            Hi, I am a 19-year-old designer from San Diego, California. I build a lot of things that fail, and a few that work.
+            I am a Yale student interested in mechanical design and robotics. I have designed FRC mechanisms, worked on four-axis CNC production, and made fixtures and manufacturing drawings. At Panluminate, I work on automation as a Yale Helix Fellow; I also conduct research at the Grab Lab.
           </p>
 
           <!-- Currently status - live indicator, easy to update -->
@@ -447,7 +444,7 @@ tailwind.config = {
               <span class="now-dot"></span>
               <span>Currently</span>
               <span class="now-sep">·</span>
-              <span class="now-task">Automation @ Panluminate · Research @ Yale</span>
+              <span class="now-task">Helix Fellow · Panluminate · Grab Lab</span>
             </span>
           </div>
 
@@ -525,6 +522,39 @@ tailwind.config = {
     </div>
   </section>
 
+  <section id="technical-skills" class="px-6 md:px-12 py-20 bg-surface-container-low/40">
+    <div class="max-w-screen-xl mx-auto">
+      <div class="reveal flex items-center gap-4 mb-5">
+        <span class="w-8 h-px bg-primary/40"></span>
+        <h2 class="text-[11px] text-primary font-bold uppercase tracking-[.2em]">Technical Skills</h2>
+        <div class="flex-grow h-px bg-outline-variant/20"></div>
+      </div>
+      <h3 class="reveal-wipe text-3xl md:text-4xl font-black text-on-surface font-['Syne'] tracking-tight mb-4">Tools and methods I use</h3>
+      <p class="reveal text-on-surface-variant leading-relaxed max-w-2xl mb-10">Each of these shows up in a project or experience below, from CAD and analysis through manufacturing and testing.</p>
+      <div class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-4">
+        <article class="reveal bg-surface-container rounded-2xl p-6 border border-outline-variant/15">
+          <h4 class="text-lg font-bold text-on-surface font-['Syne'] mb-3">CAD and drawings</h4>
+          <p class="text-sm text-on-surface-variant leading-relaxed">SolidWorks, Onshape, Fusion 360, Creo, assemblies, mechanism layouts, manufacturing drawings, GD&amp;T.</p>
+          <p class="text-xs text-primary mt-4">FRC robots · CNC fixtures · Industrial fan drawing set</p>
+        </article>
+        <article class="reveal d1 bg-surface-container rounded-2xl p-6 border border-outline-variant/15">
+          <h4 class="text-lg font-bold text-on-surface font-['Syne'] mb-3">Mechanisms and analysis</h4>
+          <p class="text-sm text-on-surface-variant leading-relaxed">Four-bar linkages, cable elevators, gearboxes, turret packaging, FEA, topology optimization, kinematics.</p>
+          <p class="text-xs text-primary mt-4">FRC 2024–26 · Cycloidal drive · Prosthetic concept</p>
+        </article>
+        <article class="reveal d2 bg-surface-container rounded-2xl p-6 border border-outline-variant/15">
+          <h4 class="text-lg font-bold text-on-surface font-['Syne'] mb-3">Manufacturing</h4>
+          <p class="text-sm text-on-surface-variant leading-relaxed">Four-axis HAAS machine operation, CNC production, fixture design, 3D printing, and sheet-metal design and bending.</p>
+          <p class="text-xs text-primary mt-4">Kinetic CNC · FRC manufacturing · Palomar College</p>
+        </article>
+        <article class="reveal d3 bg-surface-container rounded-2xl p-6 border border-outline-variant/15">
+          <h4 class="text-lg font-bold text-on-surface font-['Syne'] mb-3">Integration and testing</h4>
+          <p class="text-sm text-on-surface-variant leading-relaxed">Subsystem integration, prototype testing, service access, cable routing, and mechanical-electrical coordination.</p>
+          <p class="text-xs text-primary mt-4">FRC 2024–26 · CNC production work</p>
+        </article>
+      </div>
+    </div>
+  </section>
   <!-- (identity bento removed - philosophy callout is now inside the hero) -->
 
   </div><!-- ╚══ /TAB: ABOUT ══╝ -->
@@ -553,16 +583,16 @@ tailwind.config = {
       <!-- FRC 2026 -->
       <div class="proj-item reveal flex flex-col lg:flex-row gap-12 lg:gap-16 items-center" data-category="frc"
         data-title="FRC 2026 Robot - Reefscape"
-        data-kicker="FRC Robotics · 2026 · Won First Competition Since 2018"
+        data-kicker="FRC Robotics · 2026 · San Diego Event Winning Alliance"
         data-tags="FRC,Onshape,SolidWorks,FEA,Topology Optimization,Fabrication,Turret"
-        data-desc="Our 2026 robot won its first competition since 2018, only the second competition win in team history. I designed four of its eight mechanisms, including the team’s first turreted shooter and a second-generation elevator, and took on manufacturing and subsystem integration across the build.&#10;&#10;Earlier seasons had shown me how much time electrical problems and awkward repairs could take away from the rest of the team’s work. I paid more attention to electrical placement, labeling, and access. We had one electrical issue during the season. I also worked more with sheet metal design and bending, which gave us more consistent parts than our earlier approaches. The turret cable route still restricted rotation to about 270 degrees, a limit I would address in another iteration."
+        data-desc="Our alliance won the 2026 CA District San Diego Event. For Team 2658, it was the first competition win since 2018 and only the second in team history. I designed four of the robot’s eight mechanisms, including the team’s first turreted shooter and a second-generation elevator, and took on manufacturing and subsystem integration across the build.&#10;&#10;Earlier seasons had shown me how much time electrical problems and awkward repairs could take away from the rest of the team’s work. I paid more attention to electrical placement, labeling, and access. We had one electrical issue during the season. I also worked more with sheet metal design and bending, which gave us more consistent parts than our earlier approaches. The turret cable route still restricted rotation to about 270 degrees, a limit I would address in another iteration."
         data-process="[{&quot;title&quot;:&quot;Four mechanisms, built into one robot&quot;,&quot;text&quot;:&quot;I designed four of the eight core mechanisms. My work included the team’s first turreted shooter and a second-generation elevator, along with manufacturing and subsystem integration. On a competition robot, those pieces have to fit around the electrical system, controls, and the people who need to assemble and repair it, so I treated integration as part of the design work.&quot;},{&quot;title&quot;:&quot;Electrical access and reliability&quot;,&quot;text&quot;:&quot;Earlier seasons had recurring electrical failures, so I paid more attention to where electrical components sat, how they were labeled, and whether the team could reach them during service. That change did not make the system perfect: we still had one electrical issue. It did make the robot easier to troubleshoot and reduced the kind of repeated problems that had shaped my approach the year before.&quot;},{&quot;title&quot;:&quot;The turret cable limit&quot;,&quot;text&quot;:&quot;Routing power and signals through a rotating turret created a hard packaging constraint. The cable path limited rotation to about 270 degrees. We accepted that limit for this version, and it is one of the first things I would revisit in a new iteration. It is a good example of how a subsystem can work as designed and still impose a system-level cost.&quot;}]"
           data-imgs='["images/frc2026-robot.webp","images/frc2026-real.webp","images/frc2026-competition.webp","images/frc2026-intake.webp","images/frc2026-elevator.jpg","images/frc2026-coral.jpg","images/frc2026-chassis.jpg","images/frc2026-climber.jpg"]'>
         <div class="w-full lg:w-1/2 aspect-video rounded-2xl overflow-hidden bg-surface-container group cursor-pointer relative tilt gb proj-img-wrap">
           <img loading="lazy" decoding="async" src="images/frc2026-competition.webp" alt="FRC 2026" class="proj-img w-full h-full object-cover brightness-90"/>
           <div class="absolute inset-0 bg-gradient-to-t from-background/70 to-transparent"></div>
           <div class="proj-num">01</div>
-          <div class="absolute top-4 right-4"><span class="tag">🏆 Won 2026 San Diego Districts</span></div>
+          <div class="absolute top-4 right-4"><span class="tag">🏆 2026 San Diego Event Winning Alliance</span></div>
           <div class="absolute bottom-5 left-5 opacity-0 group-hover:opacity-100 transition-all duration-300 translate-y-1 group-hover:translate-y-0">
             <span class="text-primary text-xs font-bold uppercase tracking-widest flex items-center gap-1">View Details <span class="material-symbols-outlined text-[16px]">east</span></span>
           </div>
@@ -570,7 +600,7 @@ tailwind.config = {
         <div class="w-full lg:w-1/2">
           <span class="text-on-surface-variant font-['Syne'] text-sm tracking-wider">01 / FRC ROBOTICS</span>
           <h3 class="text-3xl md:text-4xl font-black text-on-surface mt-3 mb-5 tracking-tight font-['Syne']">FRC 2026 Robot</h3>
-          <p class="text-on-surface-variant leading-relaxed text-base mb-6">Our 2026 robot won its first competition since 2018, only the second competition win in team history. I designed four of the eight mechanisms, including our first turreted shooter and a second-generation elevator, and led manufacturing and integration. We had one electrical issue during the season, and the turret cable route still limited rotation to about 270 degrees.</p>
+          <p class="text-on-surface-variant leading-relaxed text-base mb-6">Our alliance won the 2026 CA District San Diego Event. For Team 2658, it was the first competition win since 2018 and only the second in team history. I designed four of the eight mechanisms, including our first turreted shooter and a second-generation elevator, and led manufacturing and integration. We had one electrical issue during the season, and the turret cable route still limited rotation to about 270 degrees.</p>
           <div class="flex gap-6 mb-8">
             <div><div class="text-2xl font-black text-primary font-['Syne']" data-count>4/8</div><div class="text-[10px] uppercase tracking-widest text-on-surface-variant mt-1">Mechanisms</div></div>
             <div class="w-px bg-outline-variant/30"></div>
@@ -646,6 +676,40 @@ tailwind.config = {
     </div>
   </section>
 
+  <!-- ─── ENGINEERING DRAWING FEATURE ─── -->
+  <section id="drawing-work" class="px-6 md:px-12 py-20 bg-surface-container-low/40">
+    <div class="max-w-screen-xl mx-auto">
+      <div class="reveal flex items-center gap-4 mb-5">
+        <span class="w-8 h-px bg-primary/40"></span>
+        <h2 class="text-[11px] text-primary font-bold uppercase tracking-[.2em]">Engineering Drawings</h2>
+        <div class="flex-grow h-px bg-outline-variant/20"></div>
+      </div>
+      <p class="reveal text-on-surface-variant leading-relaxed max-w-2xl mb-8">A closer look at a Creo drawing package: the full fan assembly, the parts list, and a manufacturing detail for the motor mount.</p><div id="project-fan-drawings" class="proj-item reveal gb bg-surface-container rounded-3xl overflow-hidden grid grid-cols-1 lg:grid-cols-2 group cursor-pointer" data-category="cad"
+          data-title="Palomar College Industrial Shop Fan"
+          data-kicker="Creo - Assembly and manufacturing drawings - 2025"
+          data-tags="Creo,Engineering Drawings,Assembly,Bill of Materials,Aluminum 6061-T6"
+          data-desc="I modeled an 18-inch industrial shop fan and tilting stand for the Palomar College industrial shop, then documented the assembly in Creo. The drawing set had to help someone understand both the full assembly and the parts needed to build it, so I made a two-sheet assembly drawing with an exploded view, item balloons, and a 24-item bill of materials.&#10;&#10;I also created a separate motor-mount detail drawing. It calls out 6061-T6 aluminum and black anodize, along with hole dimensions, positional dimensions, and tolerances. The assembly sheets show the overall envelope and tilt positions; the detail print gives the machinist the information needed for the mount. Together, the drawings show how I communicate an assembly and a manufacturable part at different levels of detail."
+          data-imgs='["drawings/fan-assembly-sheet-1.png","drawings/fan-assembly-sheet-2.png","drawings/fan-motor-mount.png"]'
+          data-docs='[{"label":"Fan assembly drawing - 2 sheets","url":"drawings/sk5523-1000.pdf"},{"label":"Fan motor mount detail - 1 sheet","url":"drawings/sk5523-1002.pdf"}]'
+          data-process="[{&quot;title&quot;:&quot;Showing how the assembly fits together&quot;,&quot;text&quot;:&quot;The two-sheet assembly drawing uses an exploded view, item balloons, and a 24-item bill of materials to tie each component to the parts list. The other sheet shows the fan’s overall envelope and tilt positions. I wanted a reader to be able to move from the assembled product to the individual parts without guessing how the components relate.&quot;},{&quot;title&quot;:&quot;Giving the motor mount its own detail&quot;,&quot;text&quot;:&quot;The motor-mount drawing specifies 6061-T6 aluminum and a black anodized finish, then gives the critical hole sizes, positional dimensions, and tolerances. I separated that manufacturing information from the assembly view so the mount could be read and made without crowding the overall drawing.&quot;}]">
+          <div class="min-h-[300px] lg:min-h-full bg-surface-container-high flex items-center justify-center overflow-hidden">
+            <img loading="lazy" decoding="async" src="drawings/fan-assembly-sheet-1.png" alt="Creo two-sheet assembly drawing for an 18-inch industrial shop fan" class="w-full h-full min-h-[300px] object-contain p-4"/>
+          </div>
+          <div class="p-8 md:p-10 flex flex-col justify-center">
+            <p class="text-[10px] text-primary uppercase tracking-widest mb-3">Creo · Technical drawings · Palomar College</p>
+            <h3 class="text-3xl font-black text-on-surface font-['Syne'] mb-5">Industrial Shop Fan</h3>
+            <p class="text-on-surface-variant leading-relaxed mb-4">I modeled an 18-inch industrial shop fan and tilting stand, then documented the assembly in Creo. The two-sheet assembly drawing includes an exploded view, item balloons, and a 24-item bill of materials.</p>
+            <p class="text-on-surface-variant leading-relaxed mb-6">A separate motor-mount detail specifies 6061-T6 aluminum, black anodize, hole and positional dimensions, and tolerances. The drawing set shows both the overall assembly and the information needed to make an individual part.</p>
+            <div class="flex flex-wrap gap-3 mb-6">
+              <a href="drawings/sk5523-1000.pdf" target="_blank" rel="noopener" class="inline-flex items-center gap-2 rounded-full border border-outline-variant/30 bg-background px-4 py-2.5 text-sm text-on-surface hover:text-primary"><span class="material-symbols-outlined text-[18px]">picture_as_pdf</span>Assembly drawing · 2 sheets</a>
+              <a href="drawings/sk5523-1002.pdf" target="_blank" rel="noopener" class="inline-flex items-center gap-2 rounded-full border border-outline-variant/30 bg-background px-4 py-2.5 text-sm text-on-surface hover:text-primary"><span class="material-symbols-outlined text-[18px]">picture_as_pdf</span>Motor-mount detail</a>
+            </div>
+            <button class="open-detail text-primary font-bold flex items-center gap-2 group/btn text-glow cursor-pointer">Read the drawing case study <span class="material-symbols-outlined group-hover/btn:translate-x-1 transition-transform">east</span></button>
+          </div>
+        </div>
+    </div>
+  </section>
+
   <!-- ─── PROJECT ARCHIVE ─── -->
   <section class="px-6 md:px-12 py-24 bg-surface-container-low/40">
     <div class="max-w-screen-xl mx-auto">
@@ -674,22 +738,7 @@ tailwind.config = {
         </div>
 
         <!-- Prosthetics internship -->
-        <div class="proj-item reveal arc-card gb bg-surface-container rounded-2xl overflow-hidden group cursor-pointer" data-category="cad"
-          data-title="Palomar College Industrial Shop Fan"
-          data-kicker="Creo - Assembly and manufacturing drawings - 2025"
-          data-tags="Creo,Engineering Drawings,Assembly,Bill of Materials,Aluminum 6061-T6"
-          data-desc="I modeled an 18-inch industrial shop fan and tilting stand for the Palomar College industrial shop, then documented the assembly in Creo. The drawing set had to help someone understand both the full assembly and the parts needed to build it, so I made a two-sheet assembly drawing with an exploded view, item balloons, and a 24-item bill of materials.&#10;&#10;I also created a separate motor-mount detail drawing. It calls out 6061-T6 aluminum and black anodize, along with hole dimensions, positional dimensions, and tolerances. The assembly sheets show the overall envelope and tilt positions; the detail print gives the machinist the information needed for the mount. Together, the drawings show how I communicate an assembly and a manufacturable part at different levels of detail."
-          data-imgs='["drawings/fan-assembly-sheet-1.png","drawings/fan-assembly-sheet-2.png","drawings/fan-motor-mount.png"]'
-          data-docs='[{"label":"Fan assembly drawing - 2 sheets","url":"drawings/sk5523-1000.pdf"},{"label":"Fan motor mount detail - 1 sheet","url":"drawings/sk5523-1002.pdf"}]'
-          data-process="[{&quot;title&quot;:&quot;Showing how the assembly fits together&quot;,&quot;text&quot;:&quot;The two-sheet assembly drawing uses an exploded view, item balloons, and a 24-item bill of materials to tie each component to the parts list. The other sheet shows the fan’s overall envelope and tilt positions. I wanted a reader to be able to move from the assembled product to the individual parts without guessing how the components relate.&quot;},{&quot;title&quot;:&quot;Giving the motor mount its own detail&quot;,&quot;text&quot;:&quot;The motor-mount drawing specifies 6061-T6 aluminum and a black anodized finish, then gives the critical hole sizes, positional dimensions, and tolerances. I separated that manufacturing information from the assembly view so the mount could be read and made without crowding the overall drawing.&quot;}]">
-          <div class="aspect-video overflow-hidden"><img loading="lazy" decoding="async" src="drawings/fan-assembly-sheet-1.png" alt="Creo assembly drawing for an 18-inch industrial shop fan" class="proj-img w-full h-full object-cover object-top"/></div>
-          <div class="p-6">
-            <p class="text-[10px] text-on-surface-variant uppercase tracking-widest mb-2">Creo - Drawing Package</p>
-            <h4 class="text-lg font-bold text-on-surface group-hover:text-primary transition-colors font-['Syne']">Industrial Shop Fan</h4>
-            <p class="text-sm text-on-surface-variant mt-2 leading-relaxed">Creo drawings show the full fan assembly, its 24-item parts list, and a separately detailed motor mount.</p>
-            <div class="flex gap-2 mt-4"><span class="tag">Engineering Drawings</span><span class="tag">Creo</span></div>
-          </div>
-        </div>
+        
         <div class="proj-item reveal d2 arc-card gb bg-surface-container rounded-2xl overflow-hidden group cursor-pointer" data-category="cad"
           data-title="Cycloidal Drive Gearbox - 14:1 Custom Design"
           data-kicker="Independent CAD Project · Cost-Optimized for 3D Printing"
@@ -1294,7 +1343,7 @@ function closeDetail() {
 document.querySelectorAll('.open-detail').forEach(btn =>
   btn.addEventListener('click', e => { e.stopPropagation(); openDetail(btn.closest('.proj-item')); }));
 document.querySelectorAll('.proj-item').forEach(el =>
-  el.addEventListener('click', () => openDetail(el)));
+  el.addEventListener('click', e => { if (e.target.closest('a')) return; openDetail(el); }));
 scrim.addEventListener('click', closeDetail);
 document.getElementById('dp-close').addEventListener('click', closeDetail);
 
@@ -1637,17 +1686,3 @@ document.querySelectorAll('a[href^="#"]').forEach(a => {
 </script>
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
